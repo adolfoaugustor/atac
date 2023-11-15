@@ -11,7 +11,7 @@
 
 - PHP8.1
 - MySQL
-- [voyager](https://voyager.devdojo.com/).
+- [voyager](https://voyager.devdojo.com/)
 
 ## Install
 
