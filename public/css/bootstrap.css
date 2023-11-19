@@ -1128,6 +1128,10 @@ figure {
 img {
   vertical-align: middle;
 }
+img {
+  vertical-align: middle;
+  margin-top: -10px;
+}
 .img-responsive,
 .thumbnail > img,
 .thumbnail a > img,
