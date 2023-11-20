@@ -1,79 +1,32 @@
 		<footer id="footer">
 			<div class="container">
-				<div class="footer-top clearfix">
-					
-					<div class="row">
-						<div class="col-md-3 col-sm-3">
-							<div class="footer-logo animate fadeInLeft"><a href="index-2.html"><img src="images/footer-logo.png" alt=""></a></div>
+				<div class="row">
+					<div class="footer-top clearfix">
+						<div class="col-md-4">
+							<div class="usefull-links-widget clearfix">
+								<h4>Usefull Links</h4>
+								<ul>
+									<li><a href="index-2.html">Home</a></li>
+									<li><a href="about-us.html">About Us</a></li>
+									<li><a href="services.html">Services</a></li>
+									<li><a href="#.">Projects</a></li>
+									<li><a href="news.html">News</a></li>
+									<li><a href="contact-us.html">Contact Us</a></li>
+								</ul>
+							</div>
 						</div>
-						<div class="col-md-9 col-sm-9">
-							<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit sed quia non qui dolorem or phone +11 987 654 3210 ipsum quia dolor sit amet, consectetur.</p>
-						</div>
-					</div>
-				
-					<div class="height-50"></div>
-					
-					<div class="footer-left">
-						<div class="footer-address-widget clearfix">
-							<ul>
-								<li><i class="icon-telephone114"></i>+1 900 234 567<a href="mailto:support@advisor.com">supprt@advisor.com</a></li>
-								<li><i class="icon-icons74"></i>Manhattan Hall,<span>Advisor Ltd 1258, Melbourne, australia</span></li>
-							</ul>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="usefull-links-widget clearfix">
-									<h4>Usefull Links</h4>
-									<ul>
-										<li><a href="index-2.html">Home</a></li>
-										<li><a href="about-us.html">About Us</a></li>
-										<li><a href="services.html">Services</a></li>
-										<li><a href="#.">Projects</a></li>
-										<li><a href="news.html">News</a></li>
-										<li><a href="contact-us.html">Contact Us</a></li>
-									</ul>
-									<ul>
-										<li><a href="services.html">Bonds</a></li>
-										<li><a href="services.html">Commodities</a></li>
-										<li><a href="services.html">Investments</a></li>
-										<li><a href="services.html">Retirement</a></li>
-									</ul>
+						<div class="col-md-4 col-md-offset-4">
+							<div class="twitter-widget clearfix">
+								<h4>Contatos</h4>
+								<div class="contact-info-widget">
+									<p><strong>Phone:</strong> 1.800.555.6789<br>
+									<strong>Email:</strong> <a href="mailto:support@advisor.com">support@advisor.com</a><br>
+									<strong>Web:</strong> <a href="#.">www.advisor.com</a><br>
+									<strong>Address:</strong> 12345 North Main Street, New York, NY 555555
+									</p>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="twitter-widget clearfix">
-									<h4>Twitter Feeds</h4>
-									<div class="tweet">
-										<i class="icon-twitter-1"></i>
-										<p><a href="#">@Rotography</a> Please kindly use our Support Forum: <a href="#.">pixelatic.co.uk.</a>
-										<span>about a month ago</span>
-										</p>
-									</div>
-									<div class="tweet">
-										<i class="icon-twitter-1"></i>
-										<p><a href="#">@Rotography</a> Please kindly use our Support Forum: <a href="#.">pixelatic.co.uk.</a>
-										<span>about a month ago</span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="footer-right">
-						<div class="newsletter-widget">
-							<h4>Our Newsletter</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod.</p>
-							<div class="form">
-								<p class="subscribe_success" id="subscribe_success" style="display:none;"></p>
-								<p class="subscribe_error" id="subscribe_error" style="display:none;"></p>
-							
-								<form name="subscribe_form" id="subscribe_form" method="post" action="#" onSubmit="return false">
-									<input type="text" data-delay="300" placeholder="Your Name" name="subscribe_name" id="subscribe_name" onKeyPress="removeChecks();" class="input" >
-									<input type="text" data-delay="300" placeholder="Email Address" name="subscribe_email" id="subscribe_email" onKeyPress="removeChecks();" class="input" >
-									<button class="btn btn-primary" name="Subscribe" type="submit" data-text="Subscribe" onClick="validateSubscription();">Subscribe</button>
-								</form>
-							
-							</div>
+						
 							<ul class="social">
 								<li class="animate bounceIn"><a href="#." class="facebook"><i class="icon-facebook-1"></i></a></li>
 								<li class="animate bounceIn" data-delay="100"><a href="#." class="twitter"><i class="icon-twitter-1"></i></a></li>
@@ -84,7 +37,6 @@
 					</div>
 				</div>
 			</div>
-			
 			<div class="footer-bottom">
 				<div class="container">
 					<div class="row">

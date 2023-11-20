@@ -308,7 +308,7 @@
 		<section class="different-services text-center parallax">
 			<div class="container">
 				<div class="heading animate bounceIn">
-					<h1 class="color-white">We Love What We Do</h1>
+					<h1 class="color-white">Amamos O Que Fazemos</h1>
 					<p class="color-white">Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore.</p>
 				</div>
 			</div>
@@ -438,11 +438,11 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-9">
-						<h4 class=" animate fadeInLeft">If you have any querry for related investment... We are available</h4>
+						<h4 class=" animate fadeInLeft">Precisa de ajuda com sua contabilidade... Estamos à disposição!</h4>
 					</div>
 					<div class="col-md-3">
 						<div class="text-right">
-							<a href="contact-us.html" class="btn btn-primary get-in-touch animate fadeInRight" data-text="Contact us"><i class="icon-telephone114"></i>Contact us</a>
+							<a href="contact-us.html" class="btn btn-primary get-in-touch animate fadeInRight" data-text="Fale conosco"><i class="icon-telephone114"></i>Fale conosco</a>
 						</div>
 					</div>
 				</div>
