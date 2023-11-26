@@ -17,16 +17,16 @@ Route::get('/', function () {
     return view('layouts.home');
 })->name('index.home');
 
+Route::get('fale-conosco', [App\Http\Controllers\ContactController::class, 'index']);
+Route::post('fale-conosco', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.us.store');
+
 Route::group(['prefix' => 'page'], function () {
     Route::get('/{slug}', function ($slug) {
         $page = Voyager::model('Page')->where('slug', $slug)
             ->where('status','=', 'ACTIVE')->firstOrFail();
             
         $categories = null;
-            
-        if($slug === 'fale-conosco'){
-            $categories = Voyager::model('Category')->all();
-        }
+
 
         return view('page-' . $page->slug, ['page' => $page, 'categories' => $categories]);
     });
