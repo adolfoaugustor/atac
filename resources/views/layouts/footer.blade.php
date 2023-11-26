@@ -4,24 +4,16 @@
 					<div class="footer-top clearfix">
 						<div class="col-md-4">
 							<div class="usefull-links-widget clearfix">
-								<h4>Usefull Links</h4>
-								<ul>
-									<li><a href="index-2.html">Home</a></li>
-									<li><a href="about-us.html">About Us</a></li>
-									<li><a href="services.html">Services</a></li>
-									<li><a href="#.">Projects</a></li>
-									<li><a href="news.html">News</a></li>
-									<li><a href="contact-us.html">Contact Us</a></li>
-								</ul>
+								<h2>Links Úteis</h2>
+								{{ menu('menu-footer') }}
 							</div>
 						</div>
 						<div class="col-md-4 col-md-offset-4">
 							<div class="twitter-widget clearfix">
-								<h4>Contatos</h4>
+								<h2>Contatos</h2>
 								<div class="contact-info-widget">
 									<p><strong>Phone:</strong> 1.800.555.6789<br>
 									<strong>Email:</strong> <a href="mailto:support@advisor.com">support@advisor.com</a><br>
-									<strong>Web:</strong> <a href="#.">www.advisor.com</a><br>
 									<strong>Address:</strong> 12345 North Main Street, New York, NY 555555
 									</p>
 								</div>
@@ -40,29 +32,26 @@
 			<div class="footer-bottom">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-6 col-sm-6"><p>Coyright © 2016 Advisor. All rights reserved.</p></div>
-						<div class="col-md-6 col-sm-6"><p class="text-right">Designed by <a href="#.">Brighthemes</a></p></div>
+						<div class="col-md-6 col-sm-6"><p>Coyright © 2023 ATAC. Todos os direitos reservados.</p></div>
+						<div class="col-md-6 col-sm-6">
+							<p class="text-right">Desenvolvido por <a href="https://aerowebsites.com.br" target="_blank">AeroWebSites</a></p>
+						</div>
 					</div>
 				</div>
 			</div>
 			
 		</footer>	
 		<!-- FOOTER SCRIPTS ======================= -->
-		<script src="js/jquery-2.2.0.js"></script>
-		<script src="js/smooth-scroll.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/counter.js"></script>
-		<script src="js/common.js"></script>
-		<script src="js/jquery.themepunch.plugins.min.js"></script>
-		<script src="js/jquery.themepunch.revolution.min.js"></script>
-		<script src="js/scripts.js"></script>
-		<script src="js/hero-slider.js"></script>
-		
-		
-		<!-- DEMO -->
-		<script src="demo-files/js/jquery.cookie.js"></script>
-		<script src="demo-files/js/switcher.js"></script>
-		
+		<script src="{{ asset('js/jquery-2.2.0.js') }}"></script>
+		<script src="{{ asset('js/smooth-scroll.js') }}"></script>
+		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('js/counter.js') }}"></script>
+		<script src="{{ asset('js/common.js') }}"></script>
+		<script src="{{ asset('js/jquery.themepunch.plugins.min.js') }}"></script>
+		<script src="{{ asset('js/jquery.themepunch.revolution.min.js') }}"></script>
+		<script src="{{ asset('js/scripts.js') }}"></script>
+		<script src="{{ asset('js/hero-slider.js') }}"></script>
+
 		<script>
 			jQuery(document).ready(function() {
 				// Revolution slider

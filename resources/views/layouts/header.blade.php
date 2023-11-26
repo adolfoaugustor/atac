@@ -48,7 +48,14 @@
    <![endif]-->
 	
 	<!-- ========== HEADER SCRIPTS =================== -->
-	<script src="js/modernizr.js"></script>
+	<script src="{{ asset('js/modernizr.js') }}"></script>
 	
 </head>
+   <!-- LOADER -->  
+   <div id="loader" class="loader">
+      <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+      </div>
+   </div>  
    <body class="fixed-header">
