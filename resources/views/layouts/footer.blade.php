@@ -51,6 +51,7 @@
 		<script src="{{ asset('js/jquery.themepunch.revolution.min.js') }}"></script>
 		<script src="{{ asset('js/scripts.js') }}"></script>
 		<script src="{{ asset('js/hero-slider.js') }}"></script>
+		@yield('scripts-extras')
 
 		<script>
 			jQuery(document).ready(function() {

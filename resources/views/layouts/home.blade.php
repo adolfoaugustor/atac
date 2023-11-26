@@ -361,69 +361,6 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-6 animate fadeInLeft">
-						<ul class="image-list-classic ">
-							<li><img src="images/who-is-behind-img1.jpg" alt=""></li>
-							<li><img src="images/who-is-behind-img2.jpg" alt=""></li>
-						</ul>
-					</div>
-					<div class="col-md-6 animate fadeInRight">
-						<h3>Who is behind the best brok</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. </p>
-
-						<div id="accordion" role="tablist" aria-multiselectable="true">
-							<div class="toggle">
-								<div class="toggle-heading" role="tab">
-									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-										<i class="fa fa-plus"></i> What is do i have to tell you a few lorem?
-									</a>
-								</div>
-								<div id="collapseOne" class="panel-collapse collapse" role="tabpanel">
-									<div class="toggle-body">
-										<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you.</p>
-									</div>
-								</div>
-							</div>
-							<div class="toggle">
-								<div class="toggle-heading" role="tab">
-									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
-										<i class="fa fa-minus"></i> Insight and fun facts every time
-									</a>
-								</div>
-								<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel">
-									<div class="toggle-body">
-										<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you.</p>
-									</div>
-								</div>
-							</div>
-							<div class="toggle" >
-								<div class="toggle-heading" role="tab">
-									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
-										<i class="fa fa-plus"></i> What is do i have to tell you a few lorem?
-									</a>
-								</div>
-								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel">
-									<div class="toggle-body">
-										<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you.</p>
-									</div>
-								</div>
-							</div>
-							<div class="toggle" >
-								<div class="toggle-heading" role="tab">
-									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
-										<i class="fa fa-plus"></i> What is do i have to tell you a few lorem?
-									</a>
-								</div>
-								<div id="collapseFour" class="panel-collapse collapse" role="tabpanel">
-									<div class="toggle-body">
-										<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</section><!-- / WHO IS BEHIND -->
 		
@@ -442,63 +379,60 @@
 			</div>
 		</div>
 		
-		<!-- MEET OUR ADVISORS -->
-		<section class="meet-our-advisors">
+		<!-- Clientes -->
+		<section>
 			<div class="container">
-				<div class="heading text-center animate bounceIn">
-					<h2>Meet Our Advisors</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore.</p>
+				<div class="heading margin-bottom-50 animate bounceIn">
+					<h2>Nossos Clintes</h2>
+					<p>Nosso Portifólio de clientes que atuamos para facilitar sua contabilidade.</p>
 				</div>
-				
-				<div class="single-item-carousel owl-carousel classic-arrows">
-					<div class="row">
-						<div class="col-md-5 animate fadeInLeft"><img src="images/meet-our-advisors-img1.jpg" alt=""></div>
-						<div class="col-md-7 animate fadeInRight">
-							<div class="meet-advisors-content">
-								<h3>David Fernando<span>Founder & CEO</span></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you. Lorem ipsum dolor sit amet. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore.</p>
-								<ul class="social-text">
-									<li><a href="#." class="facebook">facebook</a></li>
-									<li><a href="#." class="twitter">twitter</a></li>
-									<li><a href="#." class="youtube">youtube</a></li>
-								</ul>
-							</div>
+				<div class="two-items-carousel owl-carousel">
+					<div class="partner animate fadeInLeft">
+						<img src="images/partners/1.jpg" alt="">
+						<div class="partner-content">
+							<h4>Adup Media LLC<span>Athletic Performance</span></h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor.</p>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-5"><img src="images/meet-our-advisors-img2.jpg" alt=""></div>
-						<div class="col-md-7">
-							<div class="meet-advisors-content">
-								<h3>Ashley Hardy<span>Chief Marketing Officer</span></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you. Lorem ipsum dolor sit amet. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore.</p>
-								<ul class="social-text">
-									<li><a href="#." class="facebook">facebook</a></li>
-									<li><a href="#." class="twitter">twitter</a></li>
-									<li><a href="#." class="youtube">youtube</a></li>
-								</ul>
-							</div>
+					<div class="partner animate fadeInRight">
+						<img src="images/partners/2.jpg" alt="">
+						<div class="partner-content">
+							<h4>Primo Software<span>Software Development</span></h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor.</p>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-5"><img src="images/meet-our-advisors-img3.jpg" alt=""></div>
-						<div class="col-md-7">
-							<div class="meet-advisors-content">
-								<h3>Fernando Torres<span>Administrator</span></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you. Lorem ipsum dolor sit amet. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore.</p>
-								<ul class="social-text">
-									<li><a href="#." class="facebook">facebook</a></li>
-									<li><a href="#." class="twitter">twitter</a></li>
-									<li><a href="#." class="youtube">youtube</a></li>
-								</ul>
-							</div>
+					<div class="partner">
+						<img src="images/partners/1.jpg" alt="">
+						<div class="partner-content">
+							<h4>Adup Media LLC<span>Athletic Performance</span></h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor.</p>
+						</div>
+					</div>
+					<div class="partner">
+						<img src="images/partners/2.jpg" alt="">
+						<div class="partner-content">
+							<h4>Primo Software<span>Software Development</span></h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor.</p>
+						</div>
+					</div>
+					<div class="partner">
+						<img src="images/partners/1.jpg" alt="">
+						<div class="partner-content">
+							<h4>Adup Media LLC<span>Athletic Performance</span></h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor.</p>
+						</div>
+					</div>
+					<div class="partner">
+						<img src="images/partners/2.jpg" alt="">
+						<div class="partner-content">
+							<h4>Primo Software<span>Software Development</span></h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor.</p>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section><!-- / MEET OUR ADVISORS -->
+		</section>
+		<!-- / OUR PARTNERS -->
 	@show
 		
 @include('layouts.footer')

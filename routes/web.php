@@ -13,16 +13,22 @@ use TCG\Voyager\Facades\Voyager;
 |
 */
 Route::get('/', function () {
+    // $categories = Voyager::model('Category')->all();
     return view('layouts.home');
 })->name('index.home');
 
 Route::group(['prefix' => 'page'], function () {
     Route::get('/{slug}', function ($slug) {
-        $page = Voyager::model('Page')
-            ->where('slug', $slug)
-            ->where('status','=', 'ACTIVE')
-        ->firstOrFail();
-        return view('page-' . $page->slug, ['page' => $page]);
+        $page = Voyager::model('Page')->where('slug', $slug)
+            ->where('status','=', 'ACTIVE')->firstOrFail();
+            
+        $categories = null;
+            
+        if($slug === 'fale-conosco'){
+            $categories = Voyager::model('Category')->all();
+        }
+
+        return view('page-' . $page->slug, ['page' => $page, 'categories' => $categories]);
     });
 });
 

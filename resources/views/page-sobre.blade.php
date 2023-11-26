@@ -34,7 +34,9 @@
             </div>
             <div class="col-md-6 animate fadeInRight">
                <div class="image-widget">
-                  <img src="{{ Voyager::image( $page->image ) }}" style="width:100%" class="img-shadow" alt="">
+                  @if ($page->image)
+                     <img src="{{ Voyager::image( $page->image ) }}" style="width:100%" class="img-shadow" alt="">
+                  @endif
                </div>
             </div>
          </div>

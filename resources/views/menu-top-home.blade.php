@@ -1,6 +1,6 @@
 <div class="top-bar-simple clearfix">
    <div class="container">
-      <p>Nós temos mais de 15 anos de experiência!</p>
+      <p>ATAC Assessoria Contábil | 17 Anos</p>
       <ul class="social">
          @foreach($items as $item)
          <li>
