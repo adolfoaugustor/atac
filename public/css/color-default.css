@@ -21,7 +21,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover{ color:#0
 
 .color-default{ color:#0e1e4c !important;}
 .btn-link { color: #0e1e4c;}
-#header .main-nav li a:hover, #header .main-nav li.active a{ border-color:#0e1e4c}
+#header .main-nav li a:hover, #header .main-nav li.active a{color: rgb(191, 134, 47);padding-bottom: 6px;border-bottom: 10px solid rgb(191, 134, 47);}
 #header .search-container .search button{ color:#0e1e4c;}
 #header .search-container .search input[type="text"]:focus{ border-color:#0e1e4c;}
 .no-touch .cd-slider-nav a:hover {background-color: #0e1e4c;}
