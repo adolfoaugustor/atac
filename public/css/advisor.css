@@ -290,7 +290,7 @@ HEADER
 #header .top-bar ul li i{ font-size:20px; position:absolute; left:-34px; top:-3px;}
 #header .top-bar ul li i.icon-icons74{ font-size:27px;top: -5px;}
 #header .top-bar ul li i.icon-icons20{ font-size:27px;top: -5px;}
-#header .top-bar-simple{ background:#0d1d49; padding:0 20px; position:relative; color:#bf862f;}
+#header .top-bar-simple{ background:#0d1d49; padding:0 20px; position:relative; color:#bf862f;border-bottom: 5px solid rgb(191, 134, 47);}
 #header .top-bar-simple p{ float:left;font-size:16px; padding:9px 20px; margin:0 0 0 -20px; font-weight:400; position:relative;}
 #header .top-bar-simple ul{ float:right;}
 #header .top-bar-simple ul li{ float:left; list-style:none; font-size:14px;}

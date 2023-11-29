@@ -189,7 +189,7 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
 .image-list-classic li img{ width:100%;}
 #header .main-nav { float: left;}
 #header .main-nav li{ margin:0 7px;}
-#header .main-nav li a{ line-height:normal; padding:22px 0; font-size:15.5px;}
+#header .main-nav li a{ line-height:normal; padding:10px 0; font-size:15.5px;}
 #header .search-btn{ margin-top:71px !important;}
 #header .search-btn a{ padding-top:5px;}
 #footer .footer-logo:after {right: -15px; top: 17px;}
