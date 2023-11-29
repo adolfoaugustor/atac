@@ -17,7 +17,7 @@
 
    <!-- Favicons
    ================================================== -->
-   <link rel="icon" type="image/png" href="{{setting('site.icon_favicon')}}">
+   <link rel="icon" type="image/png" href="{{ asset('storage/'.setting('site.icon_favicon')) }}">
    
    <!-- Fonts
    ================================================== -->

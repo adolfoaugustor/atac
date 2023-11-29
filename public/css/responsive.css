@@ -4,11 +4,11 @@
 #header .search-btn, #header .logo{ margin:10px 0 !important; border:0;}
 #header .search-btn{ width:40px;}
 #header .search-btn{ height:42px;font-size: 24px;}
-.navbar-toggle .icon-bar{border-bottom: 3px solid #333;}
+.navbar-toggle .icon-bar{border-bottom: 3px solid #fff;}
 .navbar-toggle{ margin:17px 0 0;}
 #header .main-nav{ width:100%;padding: 0 0 10px;}
 #header .main-nav li{ float:none;}
-#header .main-nav li a{ line-height:normal !important;font-size: 14px; padding:10px 0 !important; color:#333;border-top: 1px solid #f1f1f1 !important;}
+#header .main-nav li a{ line-height:normal !important;font-size: 14px; padding:10px 0 !important; color:#ffffff;border-top: 1px solid #f1f1f1 !important;}
 #header .main-nav .dropdown-menu{ float:none;position: relative; border:0; margin:0; padding:0;}
 #header .main-nav .dropdown-menu li a{ padding-left:20px!important; background:none !important;}
 #header .main-nav li.dropdown ul.dropdown-menu li.dropdown-submenu .dropdown-menu{ left:0;position: relative;}
@@ -121,7 +121,7 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
 #footer .newsletter-widget .social{ margin-top:30px;}
 #header .logo{ max-width:150px;}
 #header .logo{ margin-top:14px !important;}
-.navbar-toggle { margin-top: 14px;}
+.navbar-toggle { margin-top: 10px;}
 #header .search-btn a{ font-size:24px;}
 .partner img{ float:none; margin:0 auto 20px;}
 .partner .partner-content{ padding:0; text-align:center;}
