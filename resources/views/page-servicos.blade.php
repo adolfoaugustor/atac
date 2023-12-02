@@ -25,53 +25,72 @@
 
 @section('conteudo')
    
-   <section>
+   <!-- WELCOME -->
+   <section class="servicos">
       <div class="container">
-         <ul class="highlighted-sec clearfix">
-            <li>
-               <div class="text-box animate bounceIn">
-                  <i class="icon-img-1 white"></i>
-                  <h4>Advisor</h4>
-                  <p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
+         <div class="heading text-center animate bounceIn">
+            <h2>NOSSOS SERVIÇOS</h2>
+         </div>
+         
+         <div class="height-50"></div>
+         
+         <div class="row text-center">
+            <div class="col-md-3">
+               <div class="text-box text-center animate fadeInUp">
+                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/tombamento.png') }}" alt=""></div>
+                  <h4>Tombamento de Imobilizado</h4>
                </div>
-            </li>
-            <li>
-               <div class="text-box animate bounceIn" data-delay="100">
-                  <i class="icon-img-2 white"></i>
-                  <h4>Save Money</h4>
-                  <p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
+            </div>
+            <div class="col-md-3 animate fadeInUp" data-delay="100">
+               <div class="text-box text-center">
+                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/pareceres.png') }}" alt=""></div>
+                  <h4>Emissão de Pareceres</h4>
                </div>
-            </li>
-            <li>
-               <div class="text-box animate bounceIn" data-delay="200">
-                  <i class="icon-img-3 white"></i>
-                  <h4>Secure Future</h4>
-                  <p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
+            </div>
+            <div class="col-md-3 animate fadeInUp" data-delay="200">
+               <div class="text-box text-center">
+                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/siscomex.png') }}" alt=""></div>
+                  <h4>Habilitação SISCOMEX</h4>
                </div>
-            </li>
-            <li>
-               <div class="text-box animate bounceIn" data-delay="300">
-                  <i class="icon-img-4 white"></i>
-                  <h4>Business Services</h4>
-                  <p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
+            </div>
+            <div class="col-md-3 animate fadeInUp" data-delay="200">
+               <div class="text-box text-center">
+                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/auditoria-contabil.png') }}" alt=""></div>
+                  <h4>Consultoria e Auditoria</h4>
                </div>
-            </li>
-            <li>
-               <div class="text-box animate bounceIn" data-delay="400">
-                  <i class="icon-img-5 white"></i>
-                  <h4>Financial Services</h4>
-                  <p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
+            </div>
+
+            <div class="col-md-3 animate fadeInLeft" data-delay="200">
+               <div class="text-box text-center">
+                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/avaliacao-empresa.png') }}" alt=""></div>
+                  <h4>Avaliação de empresas</h4>
                </div>
-            </li>
-            <li>
-               <div class="text-box animate bounceIn" data-delay="500">
-                  <i class="icon-img-6 white"></i>
-                  <h4>Transport & Logistics</h4>
-                  <p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
+            </div>
+            <div class="col-md-3 animate fadeInLeft" data-delay="200">
+               <div class="text-box text-center">
+                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/paralegal.png') }}" alt=""></div>
+                  <h4>Serviços Societários e Paralalegais</h4>
                </div>
-            </li>
-         </ul>
+            </div>
+            <div class="col-md-3 animate fadeInLeft" data-delay="200">
+               <div class="text-box text-center">
+                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/planejamento-tributario.png') }}" alt=""></div>
+                  <h4>Planejamento Tributário e Gestão Fiscal</h4>
+               </div>
+            </div>
+            <div class="col-md-3 animate fadeInLeft" data-delay="200">
+               <div class="text-box text-center">
+                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/assessoria-controladoria.png') }}" alt=""></div>
+                  <h4>Assessoria e Controladoria Contábil</h4>
+               </div>
+            </div>
+            <div class="col-md-12 animate fadeInRight" data-delay="200">
+               <div class="text-box text-center">
+                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/contabil-dep-fiscal-pessoal.png') }}" alt=""></div>
+                  <h4>Contabilidade, Departamento Fiscal e Pessoal</h4>
+               </div>
+            </div>
+         </div>
       </div>
-   </section>
-   <!-- HIGHLIGHTED-SEC -->
+   </section><!-- / WELCOME -->
 @endsection

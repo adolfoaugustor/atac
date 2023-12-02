@@ -299,9 +299,12 @@ HEADER
 #header.header-two{ position:relative;}
 #header.header-two .header{ height:auto;}
 @media (min-width: 767px) {
-#header.header-two .main-nav{ float:none; width:100%; background:#323946; text-align:center;margin-bottom: -40px;}
-#header.header-two .main-nav li{ float:none; display:inline-block;margin: 0 10px;}
-#header.header-two .main-nav li a{ color:#fff; padding:10px 10px 13px; line-height:50px; border-bottom:0; border-top:4px solid transparent;}
+	#header.header-two .main-nav{ float:none; width:100%; background:#323946; text-align:center;margin-bottom: -40px;}
+	#header.header-two .main-nav li{ float:none; display:inline-block;margin: 0 10px;}
+	#header.header-two .main-nav li a{ color:#fff; padding:10px 10px 13px; line-height:50px; border-bottom:0; border-top:4px solid transparent;}
+}
+@media (max-width: 1198px) {
+	.two-items-carousel2 div.esquerda, .two-items-carousel2 div.direita{ display: none !important;}
 }
 #header.header-two .header-contact-widget { float:right;}
 #header.header-two .header-contact-widget li{ float:left; list-style:none;padding: 29px 30px 0 0;}
@@ -360,13 +363,14 @@ HEADER
 .fixed-header.smallHeader.two .main-banner{ margin-top:189px;}
 .fixed-header.smallHeader #header.header-two .search-btn{ margin-top:27px;}
 .fixed-header.smallHeader #header.header-two .main-nav{ margin-bottom:0;}
-.fixed-header .main-banner, .fixed-header .subpage-header, .fixed-header .cd-hero{ margin-top:153px;}
+.fixed-header .main-banner, .fixed-header .subpage-header, .fixed-header .cd-hero{ margin-top:160px;}
 .fixed-header.two .subpage-header, .fixed-header.two .cd-hero{ margin-top:0;}
 .fixed-header.two.smallHeader .subpage-header{ margin-top:189px;}
 .fixed-header.two .main-banner{ margin-top:0;}
 .header-transparent.fixed-header .cd-hero{ margin-top:0;}
 .header-transparent #header{ background:#0d1d49;position: absolute;}
 }
+.tp-banner-container {min-height: 730px;}
 header#header {background-color: #0d1d49;}
 
 /*------------------------------------------------------------------
@@ -549,7 +553,8 @@ font-family: "Open Sans",sans-serif;}
 .company-history li .history-content:before{ position:absolute; left:-6px; top:0; width:11px; height:11px; border-radius:100%; content:"";}
 .company-history li .history-content h4{ margin-bottom:10px;}
 .company-history li:last-child .history-content{ padding-bottom:0;}
-.text-box img{ margin-bottom:35px;}
+.text-box img{ margin-bottom:10px;}
+section.servicos{background: #e9ebf1;padding-top: 130px;padding-bottom: 50px;}
 .highlighted-sec .text-box{ padding:40px; text-align:center;min-height: 293px;}
 .highlighted-sec li{ list-style:none; color:#fff; width:33.3%; float:left;}
 .highlighted-sec li .text-box h4{ color:#fff;margin-bottom: 5px;}
@@ -905,7 +910,7 @@ FOOTER
 .header-footer .selectboxit-container span{ line-height:35px;}
 .header-footer .selectboxit-container .selectboxit-options{ padding:38px 0 0 4px !important;}
 .header-footer ul li{ float:none;}
-
+.line {display: flex;flex-direction: column;width: 100%;padding-bottom: 8px;border-bottom: 2px solid rgb(191, 134, 47);}
 
 
 

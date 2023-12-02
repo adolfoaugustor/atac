@@ -1,8 +1,6 @@
 (function () {
 		"use strict";
 
-		
-		
 		/* ------------------------------------------------------------------------
 		   LOADER 
 		 ------------------------------------------------------------------------  */		 
@@ -10,8 +8,6 @@
 			jQuery('#loader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
 			jQuery('body').delay(350).css({'overflow':'visible'});
 		});
-		
-		
 		
 
 		/* ------------------------------------------------------------------------ 
@@ -31,9 +27,6 @@
 		});		
 		
 		
-		
-		
-		
 		/* ------------------------------------------------------------------------ 
 		Smooth Scroll
 		------------------------------------------------------------------------ */	
@@ -44,29 +37,22 @@
 
 		$window.on("mousewheel DOMMouseScroll", function(event){
 
-		event.preventDefault();	
+			event.preventDefault();	
 
-		var delta = event.originalEvent.wheelDelta/125 || -event.originalEvent.detail/3;
-		var scrollTop = $window.scrollTop();
-		var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+			var delta = event.originalEvent.wheelDelta/125 || -event.originalEvent.detail/3;
+			var scrollTop = $window.scrollTop();
+			var finalScroll = scrollTop - parseInt(delta*scrollDistance);
 
-		TweenMax.to($window, scrollTime, {
-		scrollTo : { y: finalScroll, autoKill:true },
-		ease: Power1.easeOut,	
-		autoKill: true,
-		overwrite: 5							
+			TweenMax.to($window, scrollTime, {
+				scrollTo : { y: finalScroll, autoKill:true },
+				ease: Power1.easeOut,	
+				autoKill: true,
+				overwrite: 5							
+			});
+
 		});
+			
 
-		});
-		
-		
-		
-
-		
-		
-		
-		
-		
 		/* ------------------------------------------------------------------------ 
 		   ITEM COUNTER
 		------------------------------------------------------------------------ */
@@ -82,9 +68,7 @@
 			$(this).parent().find('.total-items').val(itemcount);
 		});
 		
-		
-		
-		
+
 		/* ------------------------------------------------------------------------ 
 		   ADD REVIEW CUSTOM SCRIPT [open/close]
 		------------------------------------------------------------------------ */
@@ -95,9 +79,7 @@
 			jQuery("#add-review-form").slideUp();
 		});
 		
-		
-		
-		
+
 		/* ------------------------------------------------------------------------ 
 		   MOBILE MENU
 		------------------------------------------------------------------------ */
@@ -108,10 +90,6 @@
 		jQuery("#review-form-close").on("click", function() { 
 			jQuery("#add-review-form").slideUp();
 		});
-		
-		
-		
-		
 		
 		
 		/* ------------------------------------------------------------------------ 
@@ -133,8 +111,6 @@
 			});
 		});
 
-		
-		
 		
 		/* ------------------------------------------------------------------------ 
 		   TESTIMONIAL MODEL
@@ -166,22 +142,20 @@
 
 		$window2.on("mousewheel DOMMouseScroll", function(event){
 
-		event.preventDefault();	
+			event.preventDefault();	
 
-		var delta = event.originalEvent.wheelDelta/125 || -event.originalEvent.detail/3;
-		var scrollTop = $window2.scrollTop();
-		var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+			var delta = event.originalEvent.wheelDelta/125 || -event.originalEvent.detail/3;
+			var scrollTop = $window2.scrollTop();
+			var finalScroll = scrollTop - parseInt(delta*scrollDistance);
 
-		TweenMax.to($window2, scrollTime, {
-		scrollTo : { y: finalScroll, autoKill:true },
-		ease: Power1.easeOut,	
-		autoKill: true,
-		overwrite: 5							
+			TweenMax.to($window2, scrollTime, {
+				scrollTo : { y: finalScroll, autoKill:true },
+				ease: Power1.easeOut,	
+				autoKill: true,
+				overwrite: 5							
+			});
+
 		});
-
-		});
-		
-		
 		
 		
 		/* ------------------------------------------------------------------------ 
@@ -192,8 +166,6 @@
 			animateOut: 'fadeOut',
 			navText:[ '', '' ]
 		})
-		
-		
 		
 		
 		/* ------------------------------------------------------------------------ 
@@ -219,7 +191,28 @@
 			}
 		})
 		
-		
+		jQuery('.two-items-carousel2').owlCarousel({
+			nav:true,
+			loop: true,
+			autoplay: true,
+			autoplayTimeout: 3000,
+			navText:[ '<div class="esquerda"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></div>', '<div class="direita"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></div>' ],
+			responsive:{
+				0:{
+					items:2
+				},
+				768:{
+					items:2
+				},
+				979:{
+					items:3
+				},
+				1199:{
+					items:3
+				}
+				
+			}
+		})
 		
 		
 		/* ------------------------------------------------------------------------ 
@@ -245,9 +238,7 @@
 			}
 			
 		})
-		
-		
-		
+				
 		
 		/* ------------------------------------------------------------------------ 
 		   FANCYBOX
@@ -266,8 +257,6 @@
 		});
 		
 		
-		
-		
 		/* ------------------------------------------------------------------------ 
 		   FANCYBOX MEDIA
 		------------------------------------------------------------------------ */
@@ -278,8 +267,6 @@
 				media : {}
 			}
 		});
-		
-		
 		
 		
 		/* ------------------------------------------------------------------------ 
@@ -293,8 +280,6 @@
 		});
 		
 		
-		
-		
 		/* ------------------------------------------------------------------------ 
 		   VERTICAL TABS 
 		------------------------------------------------------------------------ */
@@ -305,8 +290,6 @@
 		});
 		
 		
-		
-		
 		/* ------------------------------------------------------------------------ 
 		   TOGGLES ICON
 		------------------------------------------------------------------------ */
@@ -314,21 +297,6 @@
 			jQuery(this).find('i').toggleClass('fa-minus fa-plus');
 		});
 
-		
-		
-		
-		/* ------------------------------------------------------------------------ 
-		   SEARCH
-		------------------------------------------------------------------------ */
-		jQuery('.search-trigger').on('click', function(){
-			jQuery('.search-container').fadeIn();
-		});
-		jQuery('.header-search-close').on('click', function(){
-			jQuery('.search-container').fadeOut();
-		});
-	
-		
-		
 		
 		/* ------------------------------------------------------------------------ 
 			ANIMATIONS 

@@ -47,7 +47,7 @@
 			<div class="tp-banner-container">
 				<div class="tp-banner" >
 					<ul>
-						<li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-thumb="images/main-banner/2/1.jpg"  data-saveperformance="on"  data-title="">
+						<li data-transition="fade" data-slotamount="5" data-masterspeed="300" data-thumb="images/main-banner/2/1.jpg"  data-saveperformance="on"  data-title="">
 								
 							<!-- MAIN IMAGE -->
 							<img src="images/main-banner/2/1.jpg"  alt="" data-lazyload="images/main-banner/2/1.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
@@ -57,8 +57,8 @@
 								data-x="0"
 								data-y="210" 
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-speed="700"
-								data-start="700"
+								data-speed="300"
+								data-start="500"
 								data-easing="Power3.easeInOut"
 								data-elementdelay="0.1"
 								data-endelementdelay="0.1"
@@ -70,7 +70,7 @@
 								data-x="0"
 								data-y="270" 
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-speed="700"
+								data-speed="300"
 								data-start="500"
 								data-easing="Power3.easeInOut"
 								data-elementdelay="0.1"
@@ -83,7 +83,7 @@
 								data-x="0"
 								data-y="340" 
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-speed="700"
+								data-speed="300"
 								data-start="1000"
 								data-easing="Power3.easeInOut"
 								data-elementdelay="0.1"
@@ -96,7 +96,7 @@
 								data-x="0"
 								data-y="390" 
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-speed="700"
+								data-speed="300"
 								data-start="1500"
 								data-easing="Power3.easeInOut"
 								data-elementdelay="0.1"
@@ -109,7 +109,7 @@
 								data-x="180"
 								data-y="390" 
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-speed="700"
+								data-speed="300"
 								data-start="1500"
 								data-easing="Power3.easeInOut"
 								data-elementdelay="0.1"
@@ -130,8 +130,8 @@
 								data-x="center"
 								data-y="210" 
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-speed="700"
-								data-start="700"
+								data-speed="300"
+								data-start="500"
 								data-easing="Power3.easeInOut"
 								data-elementdelay="0.1"
 								data-endelementdelay="0.1"
@@ -143,7 +143,7 @@
 								data-x="center"
 								data-y="288" 
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-speed="700"
+								data-speed="300"
 								data-start="1000"
 								data-easing="Power3.easeInOut"
 								data-elementdelay="0.1"
@@ -156,7 +156,7 @@
 								data-x="center"
 								data-y="315" 
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-speed="700"
+								data-speed="300"
 								data-start="1000"
 								data-easing="Power3.easeInOut"
 								data-elementdelay="0.1"
@@ -169,7 +169,7 @@
 								data-x="400"
 								data-y="370" 
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-speed="700"
+								data-speed="300"
 								data-start="1500"
 								data-easing="Power3.easeInOut"
 								data-elementdelay="0.1"
@@ -182,7 +182,7 @@
 									data-x="580"
 									data-y="370" 
 									data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-									data-speed="700"
+									data-speed="300"
 									data-start="1500"
 									data-easing="Power3.easeInOut"
 									data-elementdelay="0.1"
@@ -201,8 +201,8 @@
 								data-x="right"
 								data-y="210" 
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-speed="700"
-								data-start="700"
+								data-speed="300"
+								data-start="500"
 								data-easing="Power3.easeInOut"
 								data-elementdelay="0.1"
 								data-endelementdelay="0.1"
@@ -214,7 +214,7 @@
 								data-x="right"
 								data-y="288" 
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-speed="700"
+								data-speed="300"
 								data-start="1000"
 								data-easing="Power3.easeInOut"
 								data-elementdelay="0.1"
@@ -227,7 +227,7 @@
 								data-x="right"
 								data-y="315" 
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-speed="700"
+								data-speed="300"
 								data-start="1000"
 								data-easing="Power3.easeInOut"
 								data-elementdelay="0.1"
@@ -240,7 +240,7 @@
 								data-x="right"
 								data-y="370" 
 								data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								data-speed="700"
+								data-speed="300"
 								data-start="1500"
 								data-easing="Power3.easeInOut"
 								data-elementdelay="0.1"
@@ -255,111 +255,107 @@
 	@show
 
 	@section('conteudo')
-		<!-- BENIFITS -->
-		<section class="text-center">
+		<!-- WELCOME -->
+		<section class="servicos">
 			<div class="container">
-				<div class="two-items-carousel owl-carousel">
-					<div class="image-and-text-box animate fadeInLeft">
-						<div class="bordered-thumb"><a href="services.html"><img src="images/img1.jpg" alt=""></a></div>
-						<h3><a href="services.html">Why Our Consulting</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you.</p>
-					</div>
-					<div class="image-and-text-box animate fadeInRight">
-						<h3><a href="services.html">Investment Planning</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you.</p>
-						<div class="bordered-thumb"><a href="services.html"><img src="images/img2.jpg" alt=""></a></div>
-					</div>
-					<div class="image-and-text-box">
-						<div class="bordered-thumb"><a href="services.html"><img src="images/img3.jpg" alt=""></a></div>
-						<h3><a href="services.html">Retirement</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you.</p>
-					</div>
-					<div class="image-and-text-box">
-						<h3><a href="services.html">Wealth Management</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you.</p>
-						<div class="bordered-thumb"><a href="services.html"><img src="images/img4.jpg" alt=""></a></div>
-					</div>
-					<div class="image-and-text-box">
-						<div class="bordered-thumb"><a href="services.html"><img src="images/img5.jpg" alt=""></a></div>
-						<h3><a href="services.html">Lawyers Consulting</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you.</p>
-					</div>
-					<div class="image-and-text-box">
-						<h3><a href="services.html">Online Consulting</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Love life’s sweetest reward Let it flow it floats back to you.</p>
-						<div class="bordered-thumb"><a href="services.html"><img src="images/img6.jpg" alt=""></a></div>
-					</div>
+				<div class="heading text-center animate-it bounceIn">
+					<h2>NOSSOS SERVIÇOS</h2>
 				</div>
-			</div>
-		</section><!-- / BENIFITS -->
-		
-		<!-- DIFFERENT SERVICES -->
-		<section class="different-services text-center parallax">
-			<div class="container">
-				<div class="heading animate bounceIn">
-					<h1 class="color-white">Amamos O Que Fazemos</h1>
-					<p class="color-white">Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore.</p>
-				</div>
-			</div>
-		</section><!-- / DIFFERENT SERVICES -->
+				
+				<div class="height-50"></div>
+				
+				<div class="row text-center">
+					<div class="col-md-3">
+						<div class="text-box text-center animate-it fadeInUp">
+							<div class="bordered-thumb"><img src="images/icones-servicos/tombamento.png" alt=""></div>
+							<h4>Tombamento de Imobilizado</h4>
+						</div>
+					</div>
+					<div class="col-md-3 animate-it fadeInUp" data-delay="100">
+						<div class="text-box text-center">
+							<div class="bordered-thumb"><img src="images/icones-servicos/pareceres.png" alt=""></div>
+							<h4>Emissão de Pareceres</h4>
+						</div>
+					</div>
+					<div class="col-md-3 animate-it fadeInUp" data-delay="200">
+						<div class="text-box text-center">
+							<div class="bordered-thumb"><img src="images/icones-servicos/siscomex.png" alt=""></div>
+							<h4>Habilitação SISCOMEX</h4>
+						</div>
+					</div>
+					<div class="col-md-3 animate-it fadeInUp" data-delay="200">
+						<div class="text-box text-center">
+							<div class="bordered-thumb"><img src="images/icones-servicos/auditoria-contabil.png" alt=""></div>
+							<h4>Consultoria e Auditoria</h4>
+						</div>
+					</div>
 
-		<!-- WHO IS BEHIND -->
-		<section class="bg-blue">
-			<div class="container">
-				<div class="services text-center">
-					<div class="three-items-carousel owl-carousel">
-						<div class="service-box">
-							<i class="icon-img-1"></i>
-							<h4>Advisor</h4>
-							<p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
+					<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
+						<div class="text-box text-center">
+							<div class="bordered-thumb"><img src="images/icones-servicos/avaliacao-empresa.png" alt=""></div>
+							<h4>Avaliação de empresas</h4>
 						</div>
-						<div class="service-box">
-							<i class="icon-img-6"></i>
-							<h4>Business Consulting</h4>
-							<p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
+					</div>
+					<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
+						<div class="text-box text-center">
+							<div class="bordered-thumb"><img src="images/icones-servicos/paralegal.png" alt=""></div>
+							<h4>Serviços Societários e Paralalegais</h4>
 						</div>
-						<div class="service-box">
-							<i class="icon-img-7"></i>
-							<h4>Travel and Aviation</h4>
-							<p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
+					</div>
+					<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
+						<div class="text-box text-center">
+							<div class="bordered-thumb"><img src="images/icones-servicos/planejamento-tributario.png" alt=""></div>
+							<h4>Planejamento Tributário e Gestão Fiscal</h4>
 						</div>
-						
-						<div class="service-box animate fadeInUp">
-							<i class="icon-img-8"></i>
-							<h4>Consumer Consulting</h4>
-							<p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
+					</div>
+					<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
+						<div class="text-box text-center">
+							<div class="bordered-thumb"><img src="images/icones-servicos/assessoria-controladoria.png" alt=""></div>
+							<h4>Assessoria e Controladoria Contábil</h4>
 						</div>
-						<div class="service-box animate fadeInUp" data-delay="100">
-							<i class="icon-img-2"></i>
-							<h4>Save Money</h4>
-							<p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
-						</div>
-						<div class="service-box animate fadeInUp" data-delay="200">
-							<i class="icon-img-3"></i>
-							<h4>Secure Future</h4>
-							<p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
-						</div>
-						<div class="service-box">
-							<i class="icon-img-4"></i>
-							<h4>Private Consulting</h4>
-							<p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
-						</div>
-						<div class="service-box">
-							<i class="icon-img-5"></i>
-							<h4>Financial Planning</h4>
-							<p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
-						</div>
-						
-						<div class="service-box">
-							<i class="icon-img-9"></i>
-							<h4>Online Consulting</h4>
-							<p>Lorem ipsum dolor sit amet, Let it it floats back to you.</p>
+					</div>
+					<div class="col-md-3 animate-it fadeInRight" data-delay="200">
+						<div class="text-box text-center">
+							<div class="bordered-thumb"><img src="images/icones-servicos/contabil-dep-fiscal-pessoal.png" alt=""></div>
+							<h4>Contabilidade, Departamento Fiscal e Pessoal</h4>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section><!-- / WHO IS BEHIND -->
-		
+		</section><!-- / WELCOME -->
+
+		<!-- Clientes -->
+		<section>
+			<div class="container clients">
+				<div class="heading margin-bottom-50 animate-it bounceIn">
+					<h2>Nossos Clintes</h2>
+					<p>Nosso Portifólio de clientes que atuamos para facilitar sua contabilidade.</p>
+					<div class="line"></div>
+				</div>
+				<div class="two-items-carousel2 owl-carousel">
+					<div class="partner">
+						<img src="images/partners/1.jpg" alt="">
+					</div>
+					<div class="partner">
+						<img src="images/partners/2.jpg" alt="">
+					</div>
+					<div class="partner">
+						<img src="images/partners/1.jpg" alt="">
+					</div>
+					<div class="partner">
+						<img src="images/partners/2.jpg" alt="">
+					</div>
+					<div class="partner">
+						<img src="images/partners/1.jpg" alt="">
+					</div>
+					<div class="partner">
+						<img src="images/partners/2.jpg" alt="">
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- / OUR PARTNERS -->
+
 		<div class="contact-us-bar">
 			<div class="container">
 				<div class="row">
@@ -368,67 +364,14 @@
 					</div>
 					<div class="col-md-3">
 						<div class="text-right">
-							<a href="contact-us.html" class="btn btn-primary get-in-touch animate fadeInRight" data-text="Fale conosco"><i class="icon-telephone114"></i>Fale conosco</a>
+							<a href="contact-us.html" class="btn btn-primary get-in-touch animate fadeInRight" data-text="Fale conosco">
+								<i class="fa fa-whatsapp"></i>Fale conosco
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
-		<!-- Clientes -->
-		<section>
-			<div class="container">
-				<div class="heading margin-bottom-50 animate bounceIn">
-					<h2>Nossos Clintes</h2>
-					<p>Nosso Portifólio de clientes que atuamos para facilitar sua contabilidade.</p>
-				</div>
-				<div class="two-items-carousel owl-carousel">
-					<div class="partner animate fadeInLeft">
-						<img src="images/partners/1.jpg" alt="">
-						<div class="partner-content">
-							<h4>Adup Media LLC<span>Athletic Performance</span></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor.</p>
-						</div>
-					</div>
-					<div class="partner animate fadeInRight">
-						<img src="images/partners/2.jpg" alt="">
-						<div class="partner-content">
-							<h4>Primo Software<span>Software Development</span></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor.</p>
-						</div>
-					</div>
-					<div class="partner">
-						<img src="images/partners/1.jpg" alt="">
-						<div class="partner-content">
-							<h4>Adup Media LLC<span>Athletic Performance</span></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor.</p>
-						</div>
-					</div>
-					<div class="partner">
-						<img src="images/partners/2.jpg" alt="">
-						<div class="partner-content">
-							<h4>Primo Software<span>Software Development</span></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor.</p>
-						</div>
-					</div>
-					<div class="partner">
-						<img src="images/partners/1.jpg" alt="">
-						<div class="partner-content">
-							<h4>Adup Media LLC<span>Athletic Performance</span></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor.</p>
-						</div>
-					</div>
-					<div class="partner">
-						<img src="images/partners/2.jpg" alt="">
-						<div class="partner-content">
-							<h4>Primo Software<span>Software Development</span></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- / OUR PARTNERS -->
 	@show
 		
 @include('layouts.footer')

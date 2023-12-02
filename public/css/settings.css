@@ -1414,12 +1414,8 @@ border-style:none;
 .tp-rightarrow.square-old								{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_right2.html) no-Repeat top left;	width:12px;	height:17px;   float:left;	margin-left:0px; margin-top:0px;}
 
 
-.tp-leftarrow.default									{	z-index:100;cursor:pointer; left:0 !important; position:relative;	background:#fff url("../images/arrow-thin-left.png") no-repeat scroll center center;	width:70px;	height:60px;
-
-														}
-.tp-rightarrow.default									{	z-index:100;cursor:pointer; right:0 !important; position:relative;	background:#fff url("../images/arrow-thin-right.png") no-repeat scroll center center;	width:70px;	height:60px
-
-														}
+.tp-leftarrow.default{	z-index:100;cursor:pointer; left:0 !important; position:relative;	background:#fff url("../images/arrow-thin-left.png") no-repeat scroll center center;	width:70px;	height:60px;}
+.tp-rightarrow.default{	z-index:100;cursor:pointer; right:0 !important; position:relative;	background:#fff url("../images/arrow-thin-right.png") no-repeat scroll center center;	width:70px;	height:60px}
 
 
 
