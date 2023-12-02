@@ -36,6 +36,12 @@ Project:	Advisor
 .owl-carousel .owl-refresh .owl-item { display: none;}
 .owl-carousel .owl-item { position: relative; min-height: 1px; float: left; -webkit-backface-visibility: hidden; -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
 .clients .owl-item.active {width: 290px !important; margin-right: 0px !important;}
+@media only screen and (max-width: 590px){
+	.clients .two-items-carousel2 .partner{
+		width: 250px !important;
+		margin-right: 0px !important;
+	}
+}   
 .owl-carousel .owl-item img { display: block; -webkit-transform-style: preserve-3d;}
 .owl-carousel.owl-text-select-on .owl-item { -webkit-user-select: auto; -moz-user-select: auto; -ms-user-select: auto; user-select: auto;}
 .owl-carousel .owl-grab { cursor: move; cursor: -webkit-grab; cursor: -o-grab; cursor: -ms-grab; cursor: grab;}

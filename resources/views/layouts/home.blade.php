@@ -45,7 +45,7 @@
 		<!-- MAIN BANNER -->
 		<section class="main-banner">
 			<div class="tp-banner-container">
-				<div class="tp-banner" >
+				<div class="col-md-12 tp-banner" >
 					<ul>
 						<li data-transition="fade" data-slotamount="5" data-masterspeed="300" data-thumb="images/main-banner/2/1.jpg"  data-saveperformance="on"  data-title="">
 								
