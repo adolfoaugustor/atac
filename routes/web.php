@@ -13,22 +13,37 @@ use TCG\Voyager\Facades\Voyager;
 |
 */
 Route::get('/', function () {
-    // $categories = Voyager::model('Category')->all();
-    return view('layouts.home');
+    $banners = App\Models\Banner::all();
+    $clients = App\Models\Client::all();
+    $servicos = App\Models\Servico::all();
+    return view('layouts.home', [
+        'banners' => $banners ?? null, 
+        'clients' => $clients ?? null, 
+        'servicos' => $servicos ?? null, 
+    ]);
 })->name('index.home');
 
 Route::get('fale-conosco', [App\Http\Controllers\ContactController::class, 'index']);
 Route::post('fale-conosco', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.us.store');
 
 Route::group(['prefix' => 'page'], function () {
+    
     Route::get('/{slug}', function ($slug) {
         $page = Voyager::model('Page')->where('slug', $slug)
             ->where('status','=', 'ACTIVE')->firstOrFail();
-            
-        $categories = null;
+        
+        if($page->slug == 'servicos'){
+            $servicos = App\Models\Servico::all();
+        }
+        if($page->slug == 'clientes') {
+            $clients = App\Models\Client::all();
+        }
 
-
-        return view('page-' . $page->slug, ['page' => $page, 'categories' => $categories]);
+        return view('page-' . $page->slug, [
+            'page' => $page,
+            'servicos' => $servicos ?? null,
+            'clients' => $clients ?? null,
+        ]);
     });
 });
 

@@ -22,17 +22,6 @@
 						<span class="icon-bar"></span>
 					</button>
 					
-					<div class="search-container">
-						<i class="fa fa-times header-search-close"></i>
-						<div class="search-overlay"></div>
-						<div class="search">
-							<form>
-								<label>Search:</label>
-								<input type="text" placeholder="">
-								<button><i class="fa fa-search"></i></button>
-							</form>
-						</div>
-					</div>
 					{{ menu('menu-site', 'menu-home')}}
 					
 				</div><!-- / HEADER INNER -->

@@ -194,7 +194,7 @@
 		jQuery('.two-items-carousel2').owlCarousel({
 			nav:true,
 			loop: true,
-			autoplay: false,
+			autoplay: true,
 			autoplayTimeout: 3000,
 			navText:[ '<div class="esquerda"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></div>', '<div class="direita"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></div>' ],
 			responsive:{
