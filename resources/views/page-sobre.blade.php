@@ -6,8 +6,7 @@
 
 @section('menu')
 
-@section('slide-show')
-@endsection
+
 <section class="subpage-header">
    <div class="container">
       <div class="site-title clearfix">

@@ -202,7 +202,7 @@
 					items:1
 				},
 				768:{
-					items:2
+					items:1
 				},
 				979:{
 					items:3

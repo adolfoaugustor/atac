@@ -31,324 +31,329 @@
 	@show	
 
 	@section('slide-show')
-		<!-- MAIN BANNER -->
-		<section class="main-banner">
-			<div class="tp-banner-container">
-				<div class="col-md-12 tp-banner" >
-					<ul>
-						@foreach ($banners as $banner)
+		@isset($banners)
+			<!-- MAIN BANNER -->
+			<section class="main-banner">
+				<div class="tp-banner-container">
+					<div class="col-md-12 tp-banner" >
+						<ul>
+							@foreach($banners as $banner)
+							
+							@if($banner->align == 'left')
+								{{-- se o align left --}}
+								<li data-transition="fade" data-slotamount="5" data-masterspeed="300" data-thumb="{{ Voyager::image( $banner->image ) }}"  data-saveperformance="on"  data-title="">
+										
+									<!-- IMAGE -->
+									<img src="{{ Voyager::image( $banner->image ) }}"  alt="" data-lazyload="{{ Voyager::image( $banner->image ) }}" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 						
-						@if($banner->align == 'left')
-							{{-- se o align left --}}
-							<li data-transition="fade" data-slotamount="5" data-masterspeed="300" data-thumb="{{ Voyager::image( $banner->image ) }}"  data-saveperformance="on"  data-title="">
-									
-								<!-- IMAGE -->
-								<img src="{{ Voyager::image( $banner->image ) }}"  alt="" data-lazyload="{{ Voyager::image( $banner->image ) }}" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-					
-								<!-- title -->
-								<div class="tp-caption banner-heading lft rs-parallaxlevel-0"
-									data-x="0"
-									data-y="210" 
-									data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-									data-speed="300"
-									data-start="500"
-									data-easing="Power3.easeInOut"
-									data-elementdelay="0.1"
-									data-endelementdelay="0.1"
-									style="z-index: 2;"><span class="color-default">{{ $banner->title }}</span>
-								</div>
-					
-								<!-- description -->
-								@if( isset($banner->description) )
-								<div class="tp-caption lft banner-text rs-parallaxlevel-0"
-									data-x="0"
-									data-y="300" 
-									data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-									data-speed="300"
-									data-start="1000"
-									data-easing="Power3.easeInOut"
-									data-elementdelay="0.1"
-									data-endelementdelay="0.1"
-									style="z-index: 3;">{{ $banner->description }}
-								</div>
-								@endif
-					
-								@if( isset($banner->button1) )
-								<!-- botao 1 -->
-								<div class="tp-caption banner-btn colored lft banner-btn rs-parallaxlevel-0"
-									data-x="0"
-									data-y="350" 
-									data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-									data-speed="300"
-									data-start="1500"
-									data-easing="Power3.easeInOut"
-									data-elementdelay="0.1"
-									data-endelementdelay="0.1"
-									style="z-index: 4;"><a href="{{ $banner->link_btn1 }}">{{ $banner->button1 }}</a>
-								</div>
-								@endif
-					
-								@if( isset($banner->button2) )
-								<!-- botão 2 -->
-								<div class="tp-caption banner-btn lft banner-btn rs-parallaxlevel-0"
-									data-x="180"
-									data-y="350" 
-									data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-									data-speed="300"
-									data-start="1500"
-									data-easing="Power3.easeInOut"
-									data-elementdelay="0.1"
-									data-endelementdelay="0.1"
-									style="z-index: 4;"><a href="{{ $banner->link_btn2 }}">{{ $banner->button2 }}</a>
-								</div>
-								@endif
-
-							</li>
-						@endif
-
-						@if($banner->align == 'center')
-							{{-- se o align center --}}
-							<li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-thumb="{{ Voyager::image( $banner->image ) }}"  data-saveperformance="on"  data-title="">
-									
-								<!-- IMAGE -->
-								<img src="{{ Voyager::image( $banner->image ) }}"  alt="" data-lazyload="{{ Voyager::image( $banner->image ) }}" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-		
-								<!-- title -->
-								<div class="tp-caption banner-heading color-white center rs-parallaxlevel-0"
-									data-x="center"
-									data-y="210" 
-									data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-									data-speed="300"
-									data-start="500"
-									data-easing="Power3.easeInOut"
-									data-elementdelay="0.1"
-									data-endelementdelay="0.1"
-									style="z-index: 2;">{{ $banner->title }}
-								</div>
-					
-								<!-- description -->
-								@if( isset($banner->description) )
-								<div class="tp-caption center banner-text color-white rs-parallaxlevel-0"
-									data-x="center"
-									data-y="288" 
-									data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-									data-speed="300"
-									data-start="1000"
-									data-easing="Power3.easeInOut"
-									data-elementdelay="0.1"
-									data-endelementdelay="0.1"
-									style="z-index: 3;">{{ $banner->description }}
-								</div>
-								@endif
+									<!-- title -->
+									<div class="tp-caption banner-heading lft rs-parallaxlevel-0"
+										data-x="0"
+										data-y="210" 
+										data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+										data-speed="300"
+										data-start="500"
+										data-easing="Power3.easeInOut"
+										data-elementdelay="0.1"
+										data-endelementdelay="0.1"
+										style="z-index: 2;"><span class="color-default">{{ $banner->title }}</span>
+									</div>
 						
-								@if( isset($banner->button1) )
-								<!-- botão 1-->
-								<div class="tp-caption banner-btn colored center banner-btn rs-parallaxlevel-0"
-									data-x="400"
-									data-y="370" 
-									data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-									data-speed="300"
-									data-start="1500"
-									data-easing="Power3.easeInOut"
-									data-elementdelay="0.1"
-									data-endelementdelay="0.1"
-									style="z-index: 4;"><a href="{{ $banner->link_btn1 }}">{{ $banner->button1 }}</a>
-								</div>
-								@endif
-								@if( isset($banner->button2) )
-								<!-- botão 2 -->
-								<div class="tp-caption banner-btn center banner-btn rs-parallaxlevel-0"
-									data-x="580"
-									data-y="370" 
-									data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-									data-speed="300"
-									data-start="1500"
-									data-easing="Power3.easeInOut"
-									data-elementdelay="0.1"
-									data-endelementdelay="0.1"
-									style="z-index: 4;"><a href="{{ $banner->link_btn2 }}">{{ $banner->button2 }}</a>
-								</div>
-								@endif
-							</li>
-						@endif
-						@if($banner->align == 'right')
-							{{-- se o align right --}}
-							<li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-thumb="{{ Voyager::image( $banner->image ) }}"  data-saveperformance="on"  data-title="">
-									
-								<!-- IMAGE -->
-								<img src="{{ Voyager::image( $banner->image ) }}"  alt="" data-lazyload="{{ Voyager::image( $banner->image ) }}" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-					
-								<!-- title -->
-								<div class="tp-caption banner-heading right rs-parallaxlevel-0"
-									data-x="right"
-									data-y="210" 
-									data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-									data-speed="300"
-									data-start="500"
-									data-easing="Power3.easeInOut"
-									data-elementdelay="0.1"
-									data-endelementdelay="0.1"
-									style="z-index: 2;"><span class="color-default">{{ $banner->title }}</span>
-								</div>
-					
-								<!-- description -->
-								@if( isset($banner->description) )
-								<div class="tp-caption right banner-text rs-parallaxlevel-0"
-									data-x="right"
-									data-y="288" 
-									data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-									data-speed="300"
-									data-start="1000"
-									data-easing="Power3.easeInOut"
-									data-elementdelay="0.1"
-									data-endelementdelay="0.1"
-									style="z-index: 3;">{{ $banner->description }}
-								</div>
-								@endif
-					
-								@if( isset($banner->button1) )
-								<!-- botao 1 -->
-								<div class="tp-caption banner-btn colored right banner-btn rs-parallaxlevel-0"
-									data-x="right"
-									data-y="370" 
-									data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-									data-speed="300"
-									data-start="1500"
-									data-easing="Power3.easeInOut"
-									data-elementdelay="0.1"
-									data-endelementdelay="0.1"
-									style="z-index: 4;"><a href="{{ $banner->link_btn1 }}">{{ $banner->button1 }}</a>
-								</div>
-								@endif
-							</li>
-						@endif
+									<!-- description -->
+									@if( isset($banner->description) )
+									<div class="tp-caption lft banner-text rs-parallaxlevel-0"
+										data-x="0"
+										data-y="300" 
+										data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+										data-speed="300"
+										data-start="1000"
+										data-easing="Power3.easeInOut"
+										data-elementdelay="0.1"
+										data-endelementdelay="0.1"
+										style="z-index: 3;">{!! $banner->description !!}
+									</div>
+									@endif
+						
+									@if( isset($banner->button1) )
+									<!-- botao 1 -->
+									<div class="tp-caption banner-btn colored lft banner-btn rs-parallaxlevel-0"
+										data-x="0"
+										data-y="350" 
+										data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+										data-speed="300"
+										data-start="1500"
+										data-easing="Power3.easeInOut"
+										data-elementdelay="0.1"
+										data-endelementdelay="0.1"
+										style="z-index: 4;"><a href="{{ $banner->link_btn1 }}">{{ $banner->button1 }}</a>
+									</div>
+									@endif
+						
+									@if( isset($banner->button2) )
+									<!-- botão 2 -->
+									<div class="tp-caption banner-btn lft banner-btn rs-parallaxlevel-0"
+										data-x="180"
+										data-y="350" 
+										data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+										data-speed="300"
+										data-start="1500"
+										data-easing="Power3.easeInOut"
+										data-elementdelay="0.1"
+										data-endelementdelay="0.1"
+										style="z-index: 4;"><a href="{{ $banner->link_btn2 }}">{{ $banner->button2 }}</a>
+									</div>
+									@endif
 
-						@endforeach
-					</ul>
+								</li>
+							@endif
+							@if($banner->align == 'center')
+								{{-- se o align center --}}
+								<li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-thumb="{{ Voyager::image( $banner->image ) }}"  data-saveperformance="on"  data-title="">
+										
+									<!-- IMAGE -->
+									<img src="{{ Voyager::image( $banner->image ) }}"  alt="" data-lazyload="{{ Voyager::image( $banner->image ) }}" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+			
+									<!-- title -->
+									<div class="tp-caption banner-heading color-white center rs-parallaxlevel-0"
+										data-x="center"
+										data-y="210" 
+										data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+										data-speed="300"
+										data-start="500"
+										data-easing="Power3.easeInOut"
+										data-elementdelay="0.1"
+										data-endelementdelay="0.1"
+										style="z-index: 2;">{{ $banner->title }}
+									</div>
+						
+									<!-- description -->
+									@if( isset($banner->description) )
+									<div class="tp-caption center banner-text color-white rs-parallaxlevel-0"
+										data-x="center"
+										data-y="288" 
+										data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+										data-speed="300"
+										data-start="1000"
+										data-easing="Power3.easeInOut"
+										data-elementdelay="0.1"
+										data-endelementdelay="0.1"
+										style="z-index: 3;">{!! $banner->description !!}
+									</div>
+									@endif
+							
+									@if( isset($banner->button1) )
+									<!-- botão 1-->
+									<div class="tp-caption banner-btn colored center banner-btn rs-parallaxlevel-0"
+										data-x="400"
+										data-y="370" 
+										data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+										data-speed="300"
+										data-start="1500"
+										data-easing="Power3.easeInOut"
+										data-elementdelay="0.1"
+										data-endelementdelay="0.1"
+										style="z-index: 4;"><a href="{{ $banner->link_btn1 }}">{{ $banner->button1 }}</a>
+									</div>
+									@endif
+									@if( isset($banner->button2) )
+									<!-- botão 2 -->
+									<div class="tp-caption banner-btn center banner-btn rs-parallaxlevel-0"
+										data-x="580"
+										data-y="370" 
+										data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+										data-speed="300"
+										data-start="1500"
+										data-easing="Power3.easeInOut"
+										data-elementdelay="0.1"
+										data-endelementdelay="0.1"
+										style="z-index: 4;"><a href="{{ $banner->link_btn2 }}">{{ $banner->button2 }}</a>
+									</div>
+									@endif
+								</li>
+							@endif
+							@if($banner->align == 'right')
+								{{-- se o align right --}}
+								<li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-thumb="{{ Voyager::image( $banner->image ) }}"  data-saveperformance="on"  data-title="">
+										
+									<!-- IMAGE -->
+									<img src="{{ Voyager::image( $banner->image ) }}"  alt="" data-lazyload="{{ Voyager::image( $banner->image ) }}" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+						
+									<!-- title -->
+									<div class="tp-caption banner-heading right rs-parallaxlevel-0"
+										data-x="right"
+										data-y="210" 
+										data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+										data-speed="300"
+										data-start="500"
+										data-easing="Power3.easeInOut"
+										data-elementdelay="0.1"
+										data-endelementdelay="0.1"
+										style="z-index: 2;"><span class="color-default">{{ $banner->title }}</span>
+									</div>
+						
+									<!-- description -->
+									@if( isset($banner->description) )
+									<div class="tp-caption right banner-text rs-parallaxlevel-0"
+										data-x="right"
+										data-y="288" 
+										data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+										data-speed="300"
+										data-start="1000"
+										data-easing="Power3.easeInOut"
+										data-elementdelay="0.1"
+										data-endelementdelay="0.1"
+										style="z-index: 3;">{!! $banner->description !!}
+									</div>
+									@endif
+						
+									@if( isset($banner->button1) )
+									<!-- botao 1 -->
+									<div class="tp-caption banner-btn colored right banner-btn rs-parallaxlevel-0"
+										data-x="right"
+										data-y="370" 
+										data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+										data-speed="300"
+										data-start="1500"
+										data-easing="Power3.easeInOut"
+										data-elementdelay="0.1"
+										data-endelementdelay="0.1"
+										style="z-index: 4;"><a href="{{ $banner->link_btn1 }}">{{ $banner->button1 }}</a>
+									</div>
+									@endif
+								</li>
+							@endif
+
+							@endforeach
+						</ul>
+					</div>
 				</div>
-			</div>
-		</section><!-- / MAIN BANNER -->
+			</section><!-- / MAIN BANNER -->
+		@endisset
 	@show
 
 	@section('conteudo')
-		<!-- WELCOME -->
-		<section class="servicos">
-			<div class="container">
-				<div class="heading text-center animate-it bounceIn">
-					<h2>NOSSOS SERVIÇOS</h2>
-				</div>
-				
-				<div class="height-50"></div>
-				<div class="row text-center">
-					@if(count($servicos)<=0)
-						<div class="col-md-3">
-							<div class="text-box text-center animate-it fadeInUp">
-								<div class="bordered-thumb"><img src="images/icones-servicos/tombamento.png" alt=""></div>
-								<h4>Tombamento de Imobilizado</h4>
+		@isset($servicos)
+			<!-- WELCOME -->
+			<section class="servicos">
+				<div class="container">
+					<div class="heading text-center animate bounceIn">
+						<h2>NOSSOS SERVIÇOS</h2>
+					</div>
+					
+					<div class="height-50"></div>
+					<div class="row text-center">
+						@if(count($servicos)<=0)
+							<div class="col-md-3">
+								<div class="text-box text-center animate-it fadeInUp">
+									<div class="bordered-thumb"><img src="images/icones-servicos/tombamento.png" alt=""></div>
+									<h4>Tombamento de Imobilizado</h4>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-3 animate-it fadeInUp" data-delay="100">
-							<div class="text-box text-center">
-								<div class="bordered-thumb"><img src="images/icones-servicos/pareceres.png" alt=""></div>
-								<h4>Emissão de Pareceres</h4>
+							<div class="col-md-3 animate-it fadeInUp" data-delay="100">
+								<div class="text-box text-center">
+									<div class="bordered-thumb"><img src="images/icones-servicos/pareceres.png" alt=""></div>
+									<h4>Emissão de Pareceres</h4>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-3 animate-it fadeInUp" data-delay="200">
-							<div class="text-box text-center">
-								<div class="bordered-thumb"><img src="images/icones-servicos/siscomex.png" alt=""></div>
-								<h4>Habilitação SISCOMEX</h4>
+							<div class="col-md-3 animate-it fadeInUp" data-delay="200">
+								<div class="text-box text-center">
+									<div class="bordered-thumb"><img src="images/icones-servicos/siscomex.png" alt=""></div>
+									<h4>Habilitação SISCOMEX</h4>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-3 animate-it fadeInUp" data-delay="200">
-							<div class="text-box text-center">
-								<div class="bordered-thumb"><img src="images/icones-servicos/auditoria-contabil.png" alt=""></div>
-								<h4>Consultoria e Auditoria</h4>
+							<div class="col-md-3 animate-it fadeInUp" data-delay="200">
+								<div class="text-box text-center">
+									<div class="bordered-thumb"><img src="images/icones-servicos/auditoria-contabil.png" alt=""></div>
+									<h4>Consultoria e Auditoria</h4>
+								</div>
 							</div>
-						</div>
 
-						<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
-							<div class="text-box text-center">
-								<div class="bordered-thumb"><img src="images/icones-servicos/avaliacao-empresa.png" alt=""></div>
-								<h4>Avaliação de empresas</h4>
+							<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
+								<div class="text-box text-center">
+									<div class="bordered-thumb"><img src="images/icones-servicos/avaliacao-empresa.png" alt=""></div>
+									<h4>Avaliação de empresas</h4>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
-							<div class="text-box text-center">
-								<div class="bordered-thumb"><img src="images/icones-servicos/paralegal.png" alt=""></div>
-								<h4>Serviços Societários e Paralalegais</h4>
+							<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
+								<div class="text-box text-center">
+									<div class="bordered-thumb"><img src="images/icones-servicos/paralegal.png" alt=""></div>
+									<h4>Serviços Societários e Paralalegais</h4>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
-							<div class="text-box text-center">
-								<div class="bordered-thumb"><img src="images/icones-servicos/planejamento-tributario.png" alt=""></div>
-								<h4>Planejamento Tributário e Gestão Fiscal</h4>
+							<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
+								<div class="text-box text-center">
+									<div class="bordered-thumb"><img src="images/icones-servicos/planejamento-tributario.png" alt=""></div>
+									<h4>Planejamento Tributário e Gestão Fiscal</h4>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
-							<div class="text-box text-center">
-								<div class="bordered-thumb"><img src="images/icones-servicos/assessoria-controladoria.png" alt=""></div>
-								<h4>Assessoria e Controladoria Contábil</h4>
+							<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
+								<div class="text-box text-center">
+									<div class="bordered-thumb"><img src="images/icones-servicos/assessoria-controladoria.png" alt=""></div>
+									<h4>Assessoria e Controladoria Contábil</h4>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-3 animate-it fadeInRight" data-delay="200">
-							<div class="text-box text-center">
-								<div class="bordered-thumb"><img src="images/icones-servicos/contabil-dep-fiscal-pessoal.png" alt=""></div>
-								<h4>Contabilidade, Departamento Fiscal e Pessoal</h4>
+							<div class="col-md-3 animate-it fadeInRight" data-delay="200">
+								<div class="text-box text-center">
+									<div class="bordered-thumb"><img src="images/icones-servicos/contabil-dep-fiscal-pessoal.png" alt=""></div>
+									<h4>Contabilidade, Departamento Fiscal e Pessoal</h4>
+								</div>
 							</div>
-						</div>
-					@else
-						@foreach ($servicos as $servico)
-						<div class="col-md-3">
-							<div class="text-box text-center animate-it fadeInUp">
-								<div class="bordered-thumb"><img src="{{ Voyager::image( $servico->image_servico ) }}" alt=""></div>
-								<h4>{{ $servico->title }}</h4>
+						@else
+							@foreach ($servicos as $servico)
+							<div class="col-md-3">
+								<div class="text-box text-center animate fadeInUp">
+									<div class="bordered-thumb"><img src="{{ Voyager::image( $servico->image_servico ) }}" alt=""></div>
+									<h4>{{ $servico->title }}</h4>
+								</div>
 							</div>
-						</div>
-						@endforeach
-					@endif
+							@endforeach
+						@endif
+					</div>
 				</div>
-			</div>
-		</section><!-- / WELCOME -->
+			</section><!-- / WELCOME -->	
+		@endisset
 
-		<!-- Clientes -->
-		<section>
-			<div class="container clients">
-				<div class="heading margin-bottom-50 animate-it bounceIn">
-					<h2>Nossos Clintes</h2>
-					<p>Nosso Portifólio de clientes que atuamos para facilitar sua contabilidade.</p>
-					<div class="line"></div>
+		@isset($clients)
+			<!-- Clientes -->
+			<section>
+				<div class="container clients">
+					<div class="heading margin-bottom-50 animate-it bounceIn">
+						<h2>Nossos Clintes</h2>
+						<p>Nosso Portifólio de clientes que atuamos para facilitar sua contabilidade.</p>
+						<div class="line"></div>
+					</div>
+					<div class="two-items-carousel2 owl-carousel">
+						@if(count($clients)<=0)
+						<div class="partner">
+							<img src="images/partners/1.jpg" alt="">
+						</div>
+						<div class="partner">
+							<img src="images/partners/2.jpg" alt="">
+						</div>
+						<div class="partner">
+							<img src="images/partners/1.jpg" alt="">
+						</div>
+						<div class="partner">
+							<img src="images/partners/2.jpg" alt="">
+						</div>
+						<div class="partner">
+							<img src="images/partners/1.jpg" alt="">
+						</div>
+						<div class="partner">
+							<img src="images/partners/2.jpg" alt="">
+						</div>
+						@else
+							@foreach($clients as $client)
+								<div class="partner">
+									<img src="{{ Voyager::image( $servico->image_client ) }}" alt="">
+								</div>
+							@endforeach
+						@endif
+					</div>
 				</div>
-				<div class="two-items-carousel2 owl-carousel">
-					@if(count($clients)<=0)
-					<div class="partner">
-						<img src="images/partners/1.jpg" alt="">
-					</div>
-					<div class="partner">
-						<img src="images/partners/2.jpg" alt="">
-					</div>
-					<div class="partner">
-						<img src="images/partners/1.jpg" alt="">
-					</div>
-					<div class="partner">
-						<img src="images/partners/2.jpg" alt="">
-					</div>
-					<div class="partner">
-						<img src="images/partners/1.jpg" alt="">
-					</div>
-					<div class="partner">
-						<img src="images/partners/2.jpg" alt="">
-					</div>
-					@else
-						@foreach($clients as $client)
-							<div class="partner">
-								<img src="{{ Voyager::image( $servico->image_client ) }}" alt="">
-							</div>
-						@endforeach
-					@endif
-				</div>
-			</div>
-		</section>
-		<!-- / OUR PARTNERS -->
+			</section>
+			<!-- / OUR PARTNERS -->
+		@endisset
 
 		<div class="contact-us-bar">
 			<div class="container">
@@ -358,7 +363,7 @@
 					</div>
 					<div class="col-md-3">
 						<div class="text-right">
-							<a href="contact-us.html" class="btn btn-primary get-in-touch animate fadeInRight" data-text="Fale conosco">
+							<a href="tel:+853292-2586" class="btn btn-primary get-in-touch animate fadeInRight" data-text="Fale conosco">
 								<i class="fa fa-whatsapp"></i>Fale conosco
 							</a>
 						</div>

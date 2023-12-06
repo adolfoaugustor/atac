@@ -23,12 +23,12 @@ Route::get('/', function () {
     ]);
 })->name('index.home');
 
-Route::get('fale-conosco', [App\Http\Controllers\ContactController::class, 'index']);
+Route::get('fale-conosco', [App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
 Route::post('fale-conosco', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.us.store');
 
 Route::group(['prefix' => 'page'], function () {
-    
     Route::get('/{slug}', function ($slug) {
+        $banners = null;
         $page = Voyager::model('Page')->where('slug', $slug)
             ->where('status','=', 'ACTIVE')->firstOrFail();
         
@@ -40,9 +40,7 @@ Route::group(['prefix' => 'page'], function () {
         }
 
         return view('page-' . $page->slug, [
-            'page' => $page,
-            'servicos' => $servicos ?? null,
-            'clients' => $clients ?? null,
+            'page' => $page
         ]);
     });
 });
