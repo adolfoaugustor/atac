@@ -1,6 +1,11 @@
+@php
+   $anoInicio = 2006;
+   $anoAtual = date('Y');
+   $idadeEmpresa = $anoAtual - $anoInicio;
+@endphp
 <div class="top-bar-simple clearfix">
    <div class="container">
-      <p>ATAC Assessoria Contábil | 17 Anos</p>
+      <p>ATAC Assessoria Contábil | {{ $idadeEmpresa }} Anos</p>
       <ul class="social">
          @foreach($items as $item)
          <li>

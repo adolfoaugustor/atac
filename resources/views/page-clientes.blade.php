@@ -1,18 +1,16 @@
 <!-- resources/views/page-clientes.blade.php -->
 @extends('layouts.home')
  
-@section('title', 'Page')
+@section('title', 'ATAC | Nossos clientes')
 
 @section('menu')
 
-@section('slide-show')
-@endsection
 <section class="subpage-header">
    <div class="container">
       <div class="site-title clearfix">
          <h2>{{ ucfirst($page->slug) }}</h2>
          <ul class="breadcrumbs">
-            <li><a href="/">Home</a></li>
+            <li><a href="{{ route('index.home') }}">Home</a></li>
          </ul>
       </div>
       <a href="contact-us.html" class="btn btn-primary get-in-touch" data-text="Contate-nos">

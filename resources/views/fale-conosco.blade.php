@@ -2,7 +2,7 @@
  
 @extends('layouts.home')
  
-@section('title', 'Page')
+@section('title', 'ATAC | Fale conosco')
 
 @section('menu')
 

@@ -1,5 +1,6 @@
-@include('layouts.header')
+@section('title', 'ATAC | Home')
 
+@include('layouts.header')
 	@section('menu')
 		<div class="clr"></div>
 
