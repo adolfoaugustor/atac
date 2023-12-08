@@ -121,7 +121,7 @@
    <div class="map" id="map" style="border-style: solid; border-width: 2px;">
       <iframe 
          width="1905" 
-         height="710" 
+         height="700" 
          style="border:0" 
          load="lazy" 
          allowfullscreen
