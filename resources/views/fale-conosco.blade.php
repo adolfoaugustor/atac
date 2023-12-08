@@ -72,7 +72,7 @@
                   @endif
 
                   <h3>Preencha os campos:</h3><br>
-                  <form class="contact-form" id="contact_form" method="POST" action="{{ route('contact.us.store') }}">
+                  <form class="contact-form" id="contact_form" method="POST" action="{{ route('contact.store') }}">
                      {{ csrf_field() }}
                      <div class="row">
                         <div class="col-md-6">

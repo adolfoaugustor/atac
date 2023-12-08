@@ -24,26 +24,11 @@ Route::get('/', function () {
 })->name('index.home');
 
 Route::get('fale-conosco', [App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
-Route::post('fale-conosco', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.us.store');
+Route::post('fale-conosco', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 
-Route::group(['prefix' => 'page'], function () {
-    Route::get('/{slug}', function ($slug) {
-        $banners = null;
-        $page = Voyager::model('Page')->where('slug', $slug)
-            ->where('status','=', 'ACTIVE')->firstOrFail();
-        
-        if($page->slug == 'servicos'){
-            $servicos = App\Models\Servico::all();
-        }
-        if($page->slug == 'clientes') {
-            $clients = App\Models\Client::all();
-        }
-
-        return view('page-' . $page->slug, [
-            'page' => $page
-        ]);
-    });
-});
+Route::get('sobre', [App\Http\Controllers\AbountController::class, 'index'])->name('abount.index');
+Route::get('clientes', [App\Http\Controllers\ClientsController::class, 'index'])->name('client.index');
+Route::get('servicos', [App\Http\Controllers\ServicesController::class, 'index'])->name('service.index');
 
 Route::group(['prefix' => '/admin'], function () {
     Voyager::routes();

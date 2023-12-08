@@ -240,69 +240,20 @@
 					<div class="heading text-center animate bounceIn">
 						<h2>NOSSOS SERVIÇOS</h2>
 					</div>
-					
 					<div class="height-50"></div>
+					
 					<div class="row text-center">
-						@if(count($servicos)<=0)
+						@if($servicos)
+							@foreach ($servicos as $key => $servico)
 							<div class="col-md-3">
-								<div class="text-box text-center animate-it fadeInUp">
-									<div class="bordered-thumb"><img src="images/icones-servicos/tombamento.png" alt=""></div>
-									<h4>Tombamento de Imobilizado</h4>
-								</div>
-							</div>
-							<div class="col-md-3 animate-it fadeInUp" data-delay="100">
-								<div class="text-box text-center">
-									<div class="bordered-thumb"><img src="images/icones-servicos/pareceres.png" alt=""></div>
-									<h4>Emissão de Pareceres</h4>
-								</div>
-							</div>
-							<div class="col-md-3 animate-it fadeInUp" data-delay="200">
-								<div class="text-box text-center">
-									<div class="bordered-thumb"><img src="images/icones-servicos/siscomex.png" alt=""></div>
-									<h4>Habilitação SISCOMEX</h4>
-								</div>
-							</div>
-							<div class="col-md-3 animate-it fadeInUp" data-delay="200">
-								<div class="text-box text-center">
-									<div class="bordered-thumb"><img src="images/icones-servicos/auditoria-contabil.png" alt=""></div>
-									<h4>Consultoria e Auditoria</h4>
-								</div>
-							</div>
-
-							<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
-								<div class="text-box text-center">
-									<div class="bordered-thumb"><img src="images/icones-servicos/avaliacao-empresa.png" alt=""></div>
-									<h4>Avaliação de empresas</h4>
-								</div>
-							</div>
-							<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
-								<div class="text-box text-center">
-									<div class="bordered-thumb"><img src="images/icones-servicos/paralegal.png" alt=""></div>
-									<h4>Serviços Societários e Paralalegais</h4>
-								</div>
-							</div>
-							<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
-								<div class="text-box text-center">
-									<div class="bordered-thumb"><img src="images/icones-servicos/planejamento-tributario.png" alt=""></div>
-									<h4>Planejamento Tributário e Gestão Fiscal</h4>
-								</div>
-							</div>
-							<div class="col-md-3 animate-it fadeInLeft" data-delay="200">
-								<div class="text-box text-center">
-									<div class="bordered-thumb"><img src="images/icones-servicos/assessoria-controladoria.png" alt=""></div>
-									<h4>Assessoria e Controladoria Contábil</h4>
-								</div>
-							</div>
-							<div class="col-md-3 animate-it fadeInRight" data-delay="200">
-								<div class="text-box text-center">
-									<div class="bordered-thumb"><img src="images/icones-servicos/contabil-dep-fiscal-pessoal.png" alt=""></div>
-									<h4>Contabilidade, Departamento Fiscal e Pessoal</h4>
-								</div>
-							</div>
-						@else
-							@foreach ($servicos as $servico)
-							<div class="col-md-3">
-								<div class="text-box text-center animate fadeInUp">
+								<div class="text-box text-center fadeInUp 
+								@if ($key === 0)
+									animate
+								@elseif ($key === 1)
+									animate
+								@else
+									animate-it
+								@endif">
 									<div class="bordered-thumb"><img src="{{ Voyager::image( $servico->image_servico ) }}" alt=""></div>
 									<h4>{{ $servico->title }}</h4>
 								</div>
@@ -315,45 +266,22 @@
 		@endisset
 
 		@isset($clients)
-			<!-- Clientes -->
 			<section>
 				<div class="container clients">
 					<div class="heading margin-bottom-50 animate-it bounceIn">
 						<h2>Nossos Clintes</h2>
 						<p>Nosso Portifólio de clientes que atuamos para facilitar sua contabilidade.</p>
-						<div class="line"></div>
-					</div>
-					<div class="two-items-carousel2 owl-carousel">
-						@if(count($clients)<=0)
-						<div class="partner">
-							<img src="images/partners/1.jpg" alt="">
-						</div>
-						<div class="partner">
-							<img src="images/partners/2.jpg" alt="">
-						</div>
-						<div class="partner">
-							<img src="images/partners/1.jpg" alt="">
-						</div>
-						<div class="partner">
-							<img src="images/partners/2.jpg" alt="">
-						</div>
-						<div class="partner">
-							<img src="images/partners/1.jpg" alt="">
-						</div>
-						<div class="partner">
-							<img src="images/partners/2.jpg" alt="">
-						</div>
-						@else
-							@foreach($clients as $client)
-								<div class="partner">
-									<img src="{{ Voyager::image( $servico->image_client ) }}" alt="">
-								</div>
-							@endforeach
-						@endif
+					<div class="line"></div>
+				</div>
+				<div class="two-items-carousel2 owl-carousel">
+						@foreach($clients as $client)
+							<div class="partner">
+								<img src="{{ Voyager::image( $client->thumbnail('cropped', 'image_client') ) }}" alt="">
+							</div>
+						@endforeach
 					</div>
 				</div>
 			</section>
-			<!-- / OUR PARTNERS -->
 		@endisset
 
 		<div class="contact-us-bar">

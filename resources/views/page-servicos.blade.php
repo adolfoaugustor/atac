@@ -35,61 +35,25 @@
          <div class="height-50"></div>
          
          <div class="row text-center">
-            <div class="col-md-3">
-               <div class="text-box text-center animate fadeInUp">
-                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/tombamento.png') }}" alt=""></div>
-                  <h4>Tombamento de Imobilizado</h4>
+            @foreach ($servicos as $key => $servico)
+               <div class="col-md-3">
+                  <div class="text-box text-center fadeInUp @if ($key === 0)
+                        animate
+                     @elseif ($key <= 7)
+                        animate
+                     @else
+                        animate-it
+                     @endif"
+                  @if($key === 0) @else data-delay="{{ $key === 1 ? 100 : 200 }}" @endif>
+                     <div class="bordered-thumb">
+                        @if ($servico->image_servico)
+                           <img src="{{ Voyager::image( $servico->image_servico ) }}" alt="">
+                        @endif
+                     </div>
+                     <h4>{{ $servico->title }}</h4>
+                  </div>
                </div>
-            </div>
-            <div class="col-md-3 animate fadeInUp" data-delay="100">
-               <div class="text-box text-center">
-                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/pareceres.png') }}" alt=""></div>
-                  <h4>Emissão de Pareceres</h4>
-               </div>
-            </div>
-            <div class="col-md-3 animate fadeInUp" data-delay="200">
-               <div class="text-box text-center">
-                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/siscomex.png') }}" alt=""></div>
-                  <h4>Habilitação SISCOMEX</h4>
-               </div>
-            </div>
-            <div class="col-md-3 animate fadeInUp" data-delay="200">
-               <div class="text-box text-center">
-                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/auditoria-contabil.png') }}" alt=""></div>
-                  <h4>Consultoria e Auditoria</h4>
-               </div>
-            </div>
-
-            <div class="col-md-3 animate fadeInLeft" data-delay="200">
-               <div class="text-box text-center">
-                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/avaliacao-empresa.png') }}" alt=""></div>
-                  <h4>Avaliação de empresas</h4>
-               </div>
-            </div>
-            <div class="col-md-3 animate fadeInLeft" data-delay="200">
-               <div class="text-box text-center">
-                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/paralegal.png') }}" alt=""></div>
-                  <h4>Serviços Societários e Paralalegais</h4>
-               </div>
-            </div>
-            <div class="col-md-3 animate fadeInLeft" data-delay="200">
-               <div class="text-box text-center">
-                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/planejamento-tributario.png') }}" alt=""></div>
-                  <h4>Planejamento Tributário e Gestão Fiscal</h4>
-               </div>
-            </div>
-            <div class="col-md-3 animate fadeInLeft" data-delay="200">
-               <div class="text-box text-center">
-                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/assessoria-controladoria.png') }}" alt=""></div>
-                  <h4>Assessoria e Controladoria Contábil</h4>
-               </div>
-            </div>
-            <div class="col-md-12 animate fadeInRight" data-delay="200">
-               <div class="text-box text-center">
-                  <div class="bordered-thumb"><img src="{{ asset('images/icones-servicos/contabil-dep-fiscal-pessoal.png') }}" alt=""></div>
-                  <h4>Contabilidade, Departamento Fiscal e Pessoal</h4>
-               </div>
-            </div>
+            @endforeach
          </div>
       </div>
    </section><!-- / WELCOME -->
