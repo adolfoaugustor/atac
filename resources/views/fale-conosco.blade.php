@@ -118,11 +118,18 @@
       </div>
    </section><!-- / COMPANY OVERVIEW -->
       
-   <div class="map" id="map" style="border-style: solid; border-width: 2px;"></div>
+   <div class="map" id="map" style="border-style: solid; border-width: 2px;">
+      <iframe 
+         width="1200" 
+         height="710" 
+         style="border:0" 
+         load="lazy" 
+         allowfullscreen
+         src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJUaP0b5ZOxwcRY7gJfKarnkY&key=AIzaSyCA7XVaXUSfnFumdAnjgSu9TXRz1x5pQF0">
+      </iframe>
+   </div>
    @section('scripts-extras')
       <!-- Map (include map api only once)
       ============================================= -->
-      <script src="https://maps.googleapis.com/maps/api/js?v=3key=AIzaSyCA7XVaXUSfnFumdAnjgSu9TXRz1x5pQF0&amp;sensor=false"></script>
-      <script src="{{ asset('js/map.js') }}"></script>
    @endsection
 @endsection
