@@ -120,7 +120,7 @@
       
    <div class="map" id="map" style="border-style: solid; border-width: 2px;">
       <iframe 
-         width="1200" 
+         width="1905" 
          height="710" 
          style="border:0" 
          load="lazy" 
