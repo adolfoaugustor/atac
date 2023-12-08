@@ -122,7 +122,7 @@
    @section('scripts-extras')
       <!-- Map (include map api only once)
       ============================================= -->
-      <script src="https://maps.googleapis.com/maps/api/js?v=3key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&amp;sensor=false"></script>
-      <script src="js/map.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?v=3key=AIzaSyCA7XVaXUSfnFumdAnjgSu9TXRz1x5pQF0&amp;sensor=false"></script>
+      <script src="{{ asset('js/map.js') }}"></script>
    @endsection
 @endsection
