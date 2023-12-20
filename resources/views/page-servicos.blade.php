@@ -12,7 +12,7 @@
 <section class="subpage-header">
    <div class="container">
       <div class="site-title clearfix">
-         <h2>{{ ucfirst($page->slug) }}</h2>
+         <h2>{{ ucfirst($page->title) }}</h2>
          <ul class="breadcrumbs">
             <li><a href="{{ route('index.home') }}">Home</a></li>
          </ul>
@@ -32,6 +32,13 @@
             <h2>NOSSOS SERVIÇOS</h2>
          </div>
          
+         @if ($page->body != null)
+            <div class="height-50"></div>
+            <div class="row text-center">
+               {!! $page->body !!}
+            </div>            
+         @endif
+
          <div class="height-50"></div>
          
          <div class="row text-center">

@@ -557,7 +557,7 @@ font-family: "Open Sans",sans-serif;}
 .company-history li .history-content h4{ margin-bottom:10px;}
 .company-history li:last-child .history-content{ padding-bottom:0;}
 .text-box img{ margin-bottom:10px;}
-section.servicos{background: #e9ebf1;padding-top: 150px;padding-bottom: 30px;}
+section.servicos{background: #e9ebf1;padding-top: 60;padding-bottom: 30px;}
 .highlighted-sec .text-box{ padding:40px; text-align:center;min-height: 293px;}
 .highlighted-sec li{ list-style:none; color:#fff; width:33.3%; float:left;}
 .highlighted-sec li .text-box h4{ color:#fff;margin-bottom: 5px;}

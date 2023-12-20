@@ -39,6 +39,30 @@
                </div>
             </div>
          </div>
+         {{-- <div class="row">
+            <div class="col-md-12" style="margin-top: 3%">
+               <ul class="company-history">
+                  <li class="clearfix animate fadeInLeft">
+                     <div class="history-content">
+                        <h4>VISÃO</h4>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout The point of using Lorem Ipsum.</p>
+                     </div>
+                  </li>
+                  <li class="clearfix animate fadeInLeft" data-delay="100">
+                     <div class="history-content">
+                        <h4>MISSÃO</h4>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout The point of using Lorem Ipsum.</p>
+                     </div>
+                  </li>
+                  <li class="clearfix animate fadeInLeft" data-delay="200">
+                     <div class="history-content">
+                        <h4>VALORES</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Curabitur metus ipsum. But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.</p>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div> --}}
       </div>
    </section><!-- / COMPANY OVERVIEW -->
 @endsection
