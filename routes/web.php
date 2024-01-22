@@ -17,9 +17,9 @@ Route::get('/', function () {
     $clients = App\Models\Client::all();
     $servicos = App\Models\Servico::all();
     return view('layouts.home', [
-        'banners' => $banners ?? null, 
-        'clients' => $clients ?? null, 
-        'servicos' => $servicos ?? null, 
+        'banners' => $banners ?? null,
+        'clients' => $clients ?? null,
+        'servicos' => $servicos ?? null,
     ]);
 })->name('index.home');
 
@@ -29,6 +29,7 @@ Route::post('fale-conosco', [App\Http\Controllers\ContactController::class, 'sto
 Route::get('sobre', [App\Http\Controllers\AbountController::class, 'index'])->name('abount.index');
 Route::get('clientes', [App\Http\Controllers\ClientsController::class, 'index'])->name('client.index');
 Route::get('servicos', [App\Http\Controllers\ServicesController::class, 'index'])->name('service.index');
+Route::get('links', [App\Http\Controllers\LinksUteisController::class, 'index'])->name('link.index');
 
 Route::group(['prefix' => '/admin'], function () {
     Voyager::routes();
