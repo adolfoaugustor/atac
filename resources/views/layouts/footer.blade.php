@@ -4,7 +4,7 @@
 					<div class="footer-top clearfix">
 						<div class="col-md-4">
 							<div class="usefull-links-widget clearfix">
-								<h2>Links Úteis</h2>
+								<h2>Páginas</h2>
 								{{ menu('links-uteis') }}
 							</div>
 						</div>
@@ -13,7 +13,7 @@
 								<h2>Contatos</h2>
 								{{ menu('contatos', 'menu-contato-footer')}}
 							</div>
-						
+
 							<ul class="social">
 								{{ menu('social-footer', 'menu-footer-social')}}
 							</ul>
@@ -31,8 +31,8 @@
 					</div>
 				</div>
 			</div>
-			
-		</footer>	
+
+		</footer>
 		<!-- FOOTER SCRIPTS ======================= -->
 		<script src="{{ asset('js/jquery-2.2.0.js') }}"></script>
 		<script src="{{ asset('js/smooth-scroll.js') }}"></script>
