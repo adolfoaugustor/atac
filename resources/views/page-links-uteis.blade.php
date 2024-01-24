@@ -25,47 +25,42 @@
 
 @section('conteudo')
 
-   <!-- WELCOME -->
-   <section class="links">
-      <div class="container">
-         <div class="heading text-center animate bounceIn">
-            <h2>
-                @if ($page->body != null)
-                    {!! $page->title !!}
-                @endif
-            </h2>
-         </div>
-
-         @if ($page->body != null)
-            <div class="height-50"></div>
-            <div class="row text-center">
-               {!! $page->body !!}
+    <!-- WELCOME -->
+    <section class="links" style="padding: 50px 0;">
+        <div class="container">
+            <div class="heading text-center animate bounceIn">
+                <h2>
+                    @if ($page->body != null)
+                        {!! $page->title !!}
+                    @endif
+                </h2>
             </div>
-         @endif
 
-         <div class="height-50"></div>
+            @if ($page->body != null)
+                <div class="height-50"></div>
+                <div class="row text-center">
+                    {!! $page->body !!}
+                </div>
+            @endif
 
-         <div class="row text-center">
-            @foreach ($links as $key => $links)
-               <div class="col-md-3">
-                  <div class="text-box text-center fadeInUp @if ($key === 0)
-                        animate
-                     @elseif ($key <= 7)
-                        animate
-                     @else
-                        animate-it
-                     @endif"
-                  @if($key === 0) @else data-delay="{{ $key === 1 ? 100 : 200 }}" @endif>
-                     <div class="bordered-thumb">
-                        @if ($links->image_link)
-                           <img src="{{ Voyager::image( $links->image_link ) }}" alt="">
-                        @endif
-                     </div>
-                     <h4>{{ $links->title }}</h4>
-                  </div>
-               </div>
-            @endforeach
-         </div>
-      </div>
-   </section><!-- / WELCOME -->
+            <div class="height-50"></div>
+
+            <div class="row text-center">
+                @foreach ($links as $key => $links)
+                    <div class="col-md-6">
+                        <a href="{{ $links->url }}" target="_blank" rel="{{ $links->title }}" class="page-links">
+                            <div class="text-box text-center">
+                                <div class="bordered-thumb">
+                                    @if ($links->image_link)
+                                        <img src="{{ Voyager::image( $links->image_link ) }}" alt="">
+                                    @endif
+                                </div>
+                                <p style="font-size: 16px;">{{ $links->title }}</p>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section><!-- / WELCOME -->
 @endsection

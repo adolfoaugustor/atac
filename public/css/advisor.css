@@ -6,7 +6,7 @@
 
 Project:		Advisor
 Version:		1.0
-Last change:	Initial RELEASED 
+Last change:	Initial RELEASED
 Primary use:	Agency Theme
 
 -------------------------------------------------------------------*/
@@ -21,7 +21,7 @@ Primary use:	Agency Theme
 [Table of contents]
 
 1. COMMON CLASSES
-2. HEADER 
+2. HEADER
 2. ALL SECTIONS
 3. BLOG
 4. EXTERNAL PLUGINS
@@ -38,10 +38,10 @@ NOTE: Every section is commented before starting.
 
 [Typography]
 
-Html 		:		font-family : sans-serif; 	
+Html 		:		font-family : sans-serif;
 Body 		:		font-family: "Montserrat",sans-serif;
-Paragraph	:		font-family: "Open Sans",sans-serif; 
-Input, 
+Paragraph	:		font-family: "Open Sans",sans-serif;
+Input,
 textarea	:		font-family: "Open Sans",sans-serif;
 
 
@@ -76,8 +76,8 @@ h4 .small,
 h5 .small,
 .h5 .small,
 h6 .small,
-.h6 .small   
-		
+.h6 .small
+
 		font-size: 75%
 
 -------------------------------------------------------------------*/
@@ -373,7 +373,7 @@ HEADER
 @media (min-width: 1024px){
 	.main-banner .tp-banner-container{min-height: 730px;}
 }
-	
+
 header#header {background-color: #0d1d49;}
 
 /*------------------------------------------------------------------
@@ -697,13 +697,13 @@ SHOP
 .additional-detail li label{width:28%;}
 .add-review-form{max-width:500px;margin:0 auto;position: relative;}
 .review_form_thumb{padding:50px 0 20px;}
-.add-review-form .comment-respond input[type="text"], 
-.add-review-form .comment-respond input[type="email"], 
-.add-review-form .comment-respond input[type="password"], 
-.add-review-form .comment-respond input[type="number"], 
-.add-review-form .form-widget input[type="text"], 
-.add-review-form .form-widget input[type="email"], 
-.add-review-form .form-widget input[type="password"], 
+.add-review-form .comment-respond input[type="text"],
+.add-review-form .comment-respond input[type="email"],
+.add-review-form .comment-respond input[type="password"],
+.add-review-form .comment-respond input[type="number"],
+.add-review-form .form-widget input[type="text"],
+.add-review-form .form-widget input[type="email"],
+.add-review-form .form-widget input[type="password"],
 .add-review-form .form-widget input[type="number"]{width:100%;float:none;	margin-right:0;}
 .review-form-close{background: #000;color: #fff;cursor: pointer; font-size: 24px; padding: 8px 18px 8px; position: absolute; right: -100px; top: 30px;display:block;}
 .review-form-close:hover{ color:#fff;}
@@ -914,12 +914,4 @@ FOOTER
 .header-footer .selectboxit-container .selectboxit-options{ padding:38px 0 0 4px !important;}
 .header-footer ul li{ float:none;}
 .line {display: flex;flex-direction: column;width: 100%;padding-bottom: 8px;border-bottom: 2px solid rgb(191, 134, 47);}
-
-
-
-
-
-
-
-
-
+a.page-links:hover{background-color: #bf862f; color:#bf862f;}
