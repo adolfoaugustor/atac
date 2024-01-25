@@ -118,10 +118,10 @@
       </div>
    </section><!-- / COMPANY OVERVIEW -->
       
-   <div class="map" id="map" style="border-style: solid; border-width: 2px;">
+   <div class="map" id="map">
       <iframe 
-         width="1905" 
-         height="700" 
+         width="1345" 
+         height="400" 
          style="border:0" 
          load="lazy" 
          allowfullscreen
