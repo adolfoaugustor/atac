@@ -52,7 +52,7 @@
                             <div class="text-box text-center">
                                 <div class="bordered-thumb">
                                     @if ($links->image_link)
-                                        <img src="{{ Voyager::image( $links->image_link ) }}" alt="">
+                                        <img src="{{ asset('storage/' . $links->image_link ) }}" alt="">
                                     @endif
                                 </div>
                                 <p style="font-size: 16px;">{{ $links->title }}</p>

@@ -1,7 +1,7 @@
 <!-- resources/views/sobre.blade.php -->
- 
+
 @extends('layouts.home')
- 
+
 @section('title', 'ATAC | Sobre nós')
 
 @section('menu')
@@ -34,7 +34,7 @@
             <div class="col-md-6 animate fadeInRight">
                <div class="image-widget">
                   @if ($page->image)
-                     <img src="{{ Voyager::image( $page->image ) }}" style="width:100%" class="img-shadow" alt="">
+                     <img src="{{ asset('storage/' . $page->image ) }}" style="width:100%" class="img-shadow" alt="">
                   @endif
                </div>
             </div>

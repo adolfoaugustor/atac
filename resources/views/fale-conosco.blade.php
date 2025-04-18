@@ -1,7 +1,7 @@
 <!-- resources/views/page-fale-conosco.blade.php -->
- 
+
 @extends('layouts.home')
- 
+
 @section('title', 'ATAC | Fale conosco')
 
 @section('menu')
@@ -33,17 +33,17 @@
                <div class="row">
                   <div class="col-md-12 col-sm-12">
                   @if ($page->image)
-                     <img src="{{ Voyager::image( $page->image ) }}" class="quries-img img-responsive" alt="">
+                     <img src="{{ asset('storage/' . $page->image ) }}" class="quries-img img-responsive" alt="">
                   @endif
-                     
+
                   </div>
                   <div class="col-md-12 col-sm-12">
                      <p>{!! $page->body !!}</p>
                   </div>
                </div>
-               
+
             </div>
-            
+
             <div class="form">
                <div class="col-md-6 col-sm-6 animate fadeInRight">
                   @if(Session::has('success'))
@@ -113,17 +113,17 @@
                   </form>
                </div>
             </div>
-            
+
          </div>
       </div>
    </section><!-- / COMPANY OVERVIEW -->
-      
+
    <div class="map" id="map">
-      <iframe 
-         width="1345" 
-         height="400" 
-         style="border:0" 
-         load="lazy" 
+      <iframe
+         width="1345"
+         height="400"
+         style="border:0"
+         load="lazy"
          allowfullscreen
          src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJUaP0b5ZOxwcRY7gJfKarnkY&key=AIzaSyCA7XVaXUSfnFumdAnjgSu9TXRz1x5pQF0">
       </iframe>

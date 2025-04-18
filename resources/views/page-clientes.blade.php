@@ -1,6 +1,6 @@
 <!-- resources/views/page-clientes.blade.php -->
 @extends('layouts.home')
- 
+
 @section('title', 'ATAC | Nossos clientes')
 
 @section('menu')
@@ -23,16 +23,16 @@
    <!-- CASES CONTENT -->
    @isset($clients)
    <section>
-      <div class="container">  
+      <div class="container">
          <ul id="cases-container" class="cases-container">
-            
+
             @foreach($clients as $key => $client)
                <li class="entry business-services">
-                  <div class="cases-item animate fadeInUp" 
+                  <div class="cases-item animate fadeInUp"
                      @if($key === 0) @else data-delay="{{ $key === 1 ? 100 : 200 }}" @endif>
                      <a href="#">
                         <figure>
-                           <img src="{{ Voyager::image( $client->image_client ) }}" alt="">
+                           <img src="{{ asset('storage/' . $client->image_client ) }}" alt="">
                            <figcaption>
                               <div>
                                  <small>{{ $client->name }}</small>
@@ -45,9 +45,9 @@
                </li>
             @endforeach
          </ul>
-         
+
       </div>
-      
+
    </section>
    <!-- / CASES CONTENT -->
    @endisset
