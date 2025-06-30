@@ -74,39 +74,51 @@ class ContactController extends Controller
         $mail = new PHPMailer(true);
 
         try {
-            // Configurações do servidor
             $mail->isSMTP();
-            $mail->Host       = env('MAIL_HOST', 'smtp.mailtrap.io');
+            $mail->Host       = env('MAIL_HOST');
             $mail->SMTPAuth   = true;
             $mail->Username   = env('MAIL_USERNAME');
             $mail->Password   = env('MAIL_PASSWORD');
-            $mail->SMTPSecure = env('MAIL_ENCRYPTION', 'tls');
-            $mail->Port       = env('MAIL_PORT', 2525);
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Port       = env('MAIL_PORT');
 
-            // Configuração de charset para suportar acentuação
-            $mail->CharSet = 'UTF-8';
+            // Importante: Desabilitar verificação de certificado se necessário
+            $mail->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );
 
-            // Remetente
-            $mail->setFrom($data['email'], $data['nome']);
+            $mail->Timeout = 60;
+            $mail->setFrom(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'));
+            $mail->addAddress('adolfoaugustor@gmail.com', 'Admin ATAC');
             $mail->addReplyTo($data['email'], $data['nome']);
 
-            // Destinatário
-            $mail->addAddress('adolfoaugustor@gmail.com', 'Admin');
-
-            // Conteúdo do email
             $mail->isHTML(true);
-            $mail->Subject = $data['assunto'] ?? 'Novo contato do site';
+            $mail->CharSet = 'UTF-8';
+            $mail->Subject = 'Contato via Site: ' . ($data['assunto'] ?? 'Sem assunto');
 
-            // Corpo do email em HTML
+            // Template HTML
             $mail->Body = $this->getEmailTemplate($data);
 
-            // Corpo alternativo em texto simples
+            // Versão texto
             $mail->AltBody = $this->getPlainTextEmail($data);
 
             $mail->send();
 
+            Log::info('Email enviado com sucesso', [
+                'to' => 'adolfoaugustor@gmail.com',
+                'from' => $data['email']
+            ]);
+
         } catch (Exception $e) {
-            throw new \Exception("Erro ao enviar email: {$mail->ErrorInfo}");
+            Log::error('Erro ao enviar email', [
+                'error' => $e->getMessage(),
+                'trace' => $e->getTraceAsString()
+            ]);
+            throw $e;
         }
     }
 
