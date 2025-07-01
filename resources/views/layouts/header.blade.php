@@ -9,7 +9,7 @@
    <meta name="description" content="{{ setting('site.description') }}">
    <meta name="keywords" content="{{ setting('site.meta_keywords') }}">
    <meta name="author" content="{{ setting('site.meta_author') }}">
-	 
+
    <!-- Mobile Specific Metas
    ================================================== -->
    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
@@ -20,11 +20,10 @@
    <link rel="icon" type="image/png" href="{{ asset('favicon-48.ico') }}">
    <link rel="icon" type="image/png" href="{{ asset('favicon-96.ico') }}">
    <link rel="icon" type="image/png" href="{{ asset('favicon-144.ico') }}">
-   
+
    <!-- Fonts
    ================================================== -->
    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-   
    <!-- CSS
    ================================================== -->
 	<!-- bootstrap -->
@@ -32,7 +31,7 @@
 	<!-- advisor -->
 	<link rel="stylesheet" href="{{ asset('css/advisor.css') }}">
 	<!-- plugins -->
-	<link rel="stylesheet" href="{{ asset('css/plugins.css') }}">	
+	<link rel="stylesheet" href="{{ asset('css/plugins.css') }}">
 	<!-- advisor color -->
 	<link rel="stylesheet" id="color" href="{{ asset('css/color-default.css') }}">
 	<!-- hero slider -->
@@ -48,16 +47,17 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
    <![endif]-->
-	
+
 	<!-- ========== HEADER SCRIPTS =================== -->
 	<script src="{{ asset('js/modernizr.js') }}"></script>
-	
+    <!-- <script src="https://www.google.com/recaptcha/api.js?render={{env('RECAPTCHA_SITE_KEY')}}"></script> -->
+    <script async src="https://www.google.com/recaptcha/api.js"></script>
 </head>
-   <!-- LOADER -->  
+   <!-- LOADER -->
    <div id="loader" class="loader">
       <div class="spinner">
       <div class="double-bounce1"></div>
       <div class="double-bounce2"></div>
       </div>
-   </div>  
+   </div>
    <body class="fixed-header">

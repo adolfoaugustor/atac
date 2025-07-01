@@ -24,7 +24,8 @@ Route::get('/', function () {
 })->name('index.home');
 
 Route::get('fale-conosco', [App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
-Route::post('fale-conosco', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
+Route::post('fale-conosco', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store')
+    ->middleware(['throttle:5,1']);
 
 Route::get('sobre', [App\Http\Controllers\AbountController::class, 'index'])->name('abount.index');
 Route::get('clientes', [App\Http\Controllers\ClientsController::class, 'index'])->name('client.index');

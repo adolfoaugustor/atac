@@ -27,7 +27,7 @@ section,
 summary {
   display: block;
 }
-section{ 
+section{
 	padding:110px 0;
 }
 audio,
@@ -1094,14 +1094,14 @@ body {
 input[type="text"], input[type="email"], input[type="number"], input[type="password"]{
   background:#fff;
   border:1px solid #838383;
-  border-radius:30px;
+  border-radius:5px;
   width:100%;
   padding:0 25px;
   height:52px;
   margin-bottom:10px;
   font-size:14px;
   font-family: "Open Sans",sans-serif;
-} 
+}
 input,
 button,
 select,
@@ -3075,7 +3075,7 @@ input[type="submit"].btn{
 .btn.get-in-touch{
 	position:relative;
 	padding:16px 40px 11px 70px;
-	
+
 }
 .btn.get-in-touch i{
 	font-size:20px;

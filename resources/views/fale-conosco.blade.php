@@ -1,5 +1,3 @@
-<!-- resources/views/page-fale-conosco.blade.php -->
-
 @extends('layouts.home')
 
 @section('title', 'ATAC | Fale conosco')
@@ -17,7 +15,7 @@
                 <li><a href="{{ route('index.home') }}">Home</a></li>
             </ul>
         </div>
-        <a href="contact-us.html" class="btn btn-primary get-in-touch" data-text="Contate-nos">
+        <a href="{{ route('contact.index') }}" class="btn btn-primary get-in-touch" data-text="Contate-nos">
             <i class="icon-telephone114"></i>Contate-nos
         </a>
     </div>
@@ -33,7 +31,7 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                         @if ($page->image)
-                            <img src="{{ asset('storage/' . $page->image ) }}" class="quries-img img-responsive" alt="">
+                            <img src="{{ asset('storage/' . $page->image ) }}" class="quries-img img-responsive" alt="{{ $page->title }}">
                         @endif
 
                         </div>
@@ -48,68 +46,77 @@
                     <div class="col-md-6 col-sm-6 animate fadeInRight">
                         @if(Session::has('success'))
                             <div class="alert alert-success">
-                                <p class="success" id="success" style="">
+                                <p class="success" id="success">
                                 {{Session::get('success')}}
                                 </p>
                             </div>
                         @endif
+
+                        @if(Session::has('error'))
+                            <div class="alert alert-danger">
+                                <p class="error" id="error">
+                                {{Session::get('error')}}
+                                </p>
+                            </div>
+                        @endif
+
                         @if ($errors->any())
-                        <p class="error" id="error" style="">
-                            Campo(s) Obrigatório: <br>
-                            @if ($errors->has('nome'))
-                                Nome <br>
-                            @endif
-                            @if ($errors->has('celular'))
-                                Telefone/Celular <br>
-                            @endif
-                            @if ($errors->has('email'))
-                                E-mail <br>
-                            @endif
-                            @if ($errors->has('mensagem'))
-                                Mensagem
-                            @endif
-                        </p>
+                        <div class="alert alert-danger">
+                            <p class="error" id="error">
+                                Campo(s) Obrigatório: <br>
+                                @foreach ($errors->all() as $error)
+                                    {{ $error }}<br>
+                                @endforeach
+                            </p>
+                        </div>
                         @endif
 
                         <h3>Preencha os campos:</h3><br>
-                        <form class="contact-form" id="contact_form" method="POST" action="{{ route('contact.store') }}">
-                            {{ csrf_field() }}
+                        <form class="contact-form" id="contact_form" method="POST" action="{{ route('contact.store') }}" data-grecaptcha-action="message">
+                            @csrf
+                            @honeypot
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="telefone">Nome Completo</label>
-                                    <input type="text" data-delay="300" required placeholder="Nome Completo" name="nome" id="contact_name" class="input" value="{{ old('nome') }}">
+                                    <label for="nome">Nome Completo</label>
+                                    <input type="text" data-delay="300" required placeholder="Nome Completo" name="nome" id="contact_name" class="input" value="{{ old('nome') }}" maxlength="100">
                                     @if ($errors->has('nome'))
-                                        <span class="text-danger">Nome obrigatório, mínimo de 5 caracteres.</span>
+                                        <span class="text-danger">{{ $errors->first('nome') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="telefone">Telefone</label>
-                                    <input type="text" max="16" data-delay="300" required placeholder="DDD 9 9800-0000" name="celular" id="contact_phone" class="input" value="{{ old('celular') }}">
+                                    <label for="celular">Telefone</label>
+                                    <input type="text" data-delay="300" required placeholder="85 9 9999-9999" name="celular" id="contact_phone" class="input" value="{{ old('celular') }}" maxlength="20">
                                     @if ($errors->has('celular'))
-                                        <span class="text-danger">Telefone/Celular obrigatório e máximo 16, apenas numeros.</span>
+                                        <span class="text-danger">{{ $errors->first('celular') }}</span>
                                     @endif
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="telefone">E-mail</label>
-                                    <input type="text" data-delay="300" required placeholder="E-mail" name="email" id="contact_email" class="input" value="{{ old('email') }}">
+                                    <label for="email">E-mail</label>
+                                    <input type="email" data-delay="300" required placeholder="E-mail" name="email" id="contact_email" class="input" value="{{ old('email') }}" maxlength="100">
                                     @if ($errors->has('email'))
-                                        <span class="text-danger">E-mail inválido ou vazio.</span>
+                                        <span class="text-danger">{{ $errors->first('email') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="subject">Assunto</label>
-                                    <input type="text" data-delay="300" name="assunto" id="contact_subject" class="input" value="{{ old('assunto') }}">
+                                    <label for="assunto">Assunto</label>
+                                    <input type="text" data-delay="300" name="assunto" id="contact_subject" class="input" value="{{ old('assunto') }}" maxlength="100">
                                 </div>
                             </div>
-                            <label for="telefone">Mensagem:</label>
-                            <textarea data-delay="500" class="required valid" required placeholder="Informações: " name="mensagem" id="message">{{ old('mensagem') }}</textarea>
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea data-delay="500" class="required valid" required placeholder="Informações: " name="mensagem" id="message" maxlength="2000">{{ old('mensagem') }}</textarea>
                             @if ($errors->has('mensagem'))
-                                <span class="text-danger">Mensagem obrigatória.</span>
+                                <span class="text-danger">{{ $errors->first('mensagem') }}</span>
                             @endif
 
-                            <button class="btn btn-primary" name="" type="submit" data-text="Enviar">Enviar</button>
+                            <!-- Campo honeypot (invisível para usuários reais) -->
+                            <div style="display:none">
+                                <label for="website">Website</label>
+                                <input type="text" name="website" id="website" value="">
+                            </div>
+                            <div class="g-recaptcha mt-4" data-sitekey="{{config('services.recaptcha.site_key')}}"></div>
+                           <button class="btn btn-primary" name="submit" type="submit" data-text="Enviar" id="submit_btn">Enviar</button>
                         </form>
                     </div>
                 </div>
@@ -121,15 +128,14 @@
             width="100%"
             height="450"
             style="border:0"
-            load="lazy"
+            loading="lazy"
             allowfullscreen
-            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJUaP0b5ZOxwcRY7gJfKarnkY&key=AIzaSyCA7XVaXUSfnFumdAnjgSu9TXRz1x5pQF0">
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJUaP0b5ZOxwcRY7gJfKarnkY&key={{ env('GOOGLE_MAPS_API_KEY') }}">
         </iframe>
     </div>
 
     @section('scripts-extras')
-        <!-- Map (include map api only once)
-        ============================================= -->
+
     @endsection
 @endsection
-

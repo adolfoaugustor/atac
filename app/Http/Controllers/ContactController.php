@@ -2,22 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Rules\ReCAPTCHAv3;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use TCG\Voyager\Facades\Voyager;
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-
+use TCG\Voyager\Facades\Voyager;
+use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\IpUtils;
 
 class ContactController extends Controller
 {
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
     public function index()
     {
         $page = Voyager::model('Page')->where('slug', 'fale-conosco')
@@ -26,49 +23,141 @@ class ContactController extends Controller
         return view('fale-conosco', ['page' => $page]);
     }
 
-    /**
-     * Store contact form data and send email
-     *
-     * @return response()
-     */
     public function store(Request $request)
     {
-        $request->validate([
-            'nome' => 'required|min:5|max:100',
-            'email' => 'required|email',
-            'celular' => 'required|numeric',
-            'mensagem' => 'required|min:5'
+        if( env('APP_ENV') == 'production' ){
+            $captcha = $this->validRecaptcha($request);
+            if (!$captcha) {
+                return redirect()->back()
+                    ->with(['error' => 'Captcha não é válido!']);
+            }
+        }
+
+        // Verificar se o campo honeypot foi preenchido (indicando um bot)
+        if ($request->filled('website')) {
+            Log::warning('Possível bot detectado via honeypot', [
+                'ip' => $request->ip(),
+                'user_agent' => $request->header('User-Agent')
+            ]);
+
+            // Simular sucesso para o bot
+            return redirect()->back()
+                ->with(['success' => 'Obrigado por entrar em contato conosco. Entraremos em contato em breve.']);
+        }
+
+        // Verificar se o IP está bloqueado
+        if (Contact::isIpBlocked($request->ip())) {
+            Log::warning('IP bloqueado tentando enviar formulário', [
+                'ip' => $request->ip()
+            ]);
+
+            return redirect()->back()
+                ->with(['error' => 'Muitas solicitações foram detectadas. Por favor, tente novamente mais tarde.']);
+        }
+
+        // Verificar se o email está bloqueado
+        if ($request->filled('email') && Contact::isEmailBlocked($request->input('email'))) {
+            Log::warning('Email bloqueado tentando enviar formulário', [
+                'email' => $request->input('email'),
+                'ip' => $request->ip()
+            ]);
+
+            return redirect()->back()
+                ->with(['error' => 'Muitas solicitações foram detectadas. Por favor, tente novamente mais tarde.']);
+        }
+
+        // Validação (mantida do código anterior)
+        Validator::make($request->all(),[
+            'nome' => 'required|min:5|max:100|regex:/^[\pL\s\-]+$/u',
+            'email' => 'required|email:rfc,dns',
+            'celular' => 'required|regex:/^[\d\s-]{10,20}$/',
+            'assunto' => 'nullable|max:100|string',
+            'mensagem' => 'required|min:5|max:2000|string',
+        ],[
+            'nome.regex' => 'O nome deve conter apenas letras, espaços e hífens.',
+            'celular.regex' => 'O celular deve conter apenas números, espaço ou hífen. (10-20 dígitos).',
+            'mensagem.max' => 'A mensagem não pode exceder 2000 caracteres.',
         ]);
 
-        $input = $request->all();
+        // Preparar dados com informações adicionais
+        $input = [
+            'nome' => $request->input('nome'),
+            'email' => $request->input('email'),
+            'celular' => $request->input('celular'),
+            'assunto' => $request->input('assunto'),
+            'mensagem' => $request->input('mensagem'),
+            'ip_address' => $request->ip(),
+            'user_agent' => $request->header('User-Agent')
+        ];
 
         try {
-            // Salvar no banco de dados
-            Contact::create($input);
+            // Verificar taxa de requisições (rate limiting)
+            if ($this->isSpamming($request)) {
+                Log::warning('Possível tentativa de spam detectada', [
+                    'ip' => $request->ip(),
+                    'user_agent' => $request->header('User-Agent')
+                ]);
+
+                return redirect()->back()
+                    ->with(['error' => 'Muitas solicitações em um curto período. Por favor, aguarde alguns minutos antes de tentar novamente.'])
+                    ->withInput($request->except(['website']));
+            }
+
+            // Sanitizar e salvar no banco de dados
+            $sanitizedData = Contact::sanitizeData($input);
+            Contact::create($sanitizedData);
 
             // Enviar email com PHPMailer
-            $this->sendEmailWithPHPMailer($input);
+            $this->sendEmailWithPHPMailer($sanitizedData);
+
+            // Registrar sucesso
+            Log::info('Contato processado com sucesso', [
+                'email' => $sanitizedData['email'],
+                'ip' => $request->ip()
+            ]);
 
             return redirect()->back()
                 ->with(['success' => 'Obrigado por entrar em contato conosco. Entraremos em contato em breve.']);
 
         } catch (\Exception $e) {
             // Log do erro
-            Log::error('Erro ao processar contato: ' . $e->getMessage());
+            Log::error('Erro ao processar contato: ' . $e->getMessage(), [
+                'trace' => $e->getTraceAsString(),
+                'input' => $input
+            ]);
 
             return redirect()->back()
                 ->with(['error' => 'Houve um erro ao processar sua solicitação. Por favor, tente novamente.'])
-                ->withInput();
+                ->withInput($request->except(['website']));
         }
     }
 
     /**
-     * Send email using PHPMailer
-     *
-     * @param array $data
-     * @return void
-     * @throws Exception
+     * Verifica se o usuário está enviando muitas requisições em um curto período
      */
+    private function isSpamming(Request $request)
+    {
+        $ip = $request->ip();
+        $cacheKey = 'contact_form_' . md5($ip);
+
+        // Se já existir uma entrada para este IP nos últimos 60 segundos
+        if (cache()->has($cacheKey)) {
+            $attempts = cache()->get($cacheKey);
+
+            // Permitir no máximo 3 tentativas em 5 minutos
+            if ($attempts >= 3) {
+                return true;
+            }
+
+            cache()->put($cacheKey, $attempts + 1, now()->addMinutes(5));
+        } else {
+            // Primeira tentativa
+            cache()->put($cacheKey, 1, now()->addMinutes(5));
+        }
+
+        return false;
+    }
+
     private function sendEmailWithPHPMailer($data)
     {
         $mail = new PHPMailer(true);
@@ -82,23 +171,23 @@ class ContactController extends Controller
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port       = env('MAIL_PORT');
 
-            // Importante: Desabilitar verificação de certificado se necessário
+            // Importante: Considere habilitar a verificação em produção
             $mail->SMTPOptions = array(
                 'ssl' => array(
-                    'verify_peer' => false,
-                    'verify_peer_name' => false,
-                    'allow_self_signed' => true
+                    'verify_peer' => env('APP_ENV') === 'production',
+                    'verify_peer_name' => env('APP_ENV') === 'production',
+                    'allow_self_signed' => env('APP_ENV') !== 'production'
                 )
             );
 
             $mail->Timeout = 60;
             $mail->setFrom(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'));
-            $mail->addAddress('adolfoaugustor@gmail.com', 'Admin ATAC');
+            $mail->addAddress(env('MAIL_ADMIN_ADDRESS', 'adolfoaugustor@gmail.com'), env('MAIL_ADMIN_NAME', 'Admin ATAC'));
             $mail->addReplyTo($data['email'], $data['nome']);
 
             $mail->isHTML(true);
             $mail->CharSet = 'UTF-8';
-            $mail->Subject = 'Contato via Site: ' . ($data['assunto'] ?? 'Sem assunto');
+            $mail->Subject = 'Contato via Site: ' . htmlspecialchars($data['assunto'] ?? 'Sem assunto');
 
             // Template HTML
             $mail->Body = $this->getEmailTemplate($data);
@@ -109,7 +198,7 @@ class ContactController extends Controller
             $mail->send();
 
             Log::info('Email enviado com sucesso', [
-                'to' => 'adolfoaugustor@gmail.com',
+                'to' => env('MAIL_ADMIN_ADDRESS', 'adolfoaugustor@gmail.com'),
                 'from' => $data['email']
             ]);
 
@@ -122,20 +211,26 @@ class ContactController extends Controller
         }
     }
 
-    /**
-     * Get HTML email template
-     *
-     * @param array $data
-     * @return string
-     */
     private function getEmailTemplate($data)
     {
         // Se você tiver uma view blade para o email
         if (view()->exists('emails.contact')) {
-            return view('emails.contact', $data)->render();
+            return view('emails.contact', [
+                'nome' => htmlspecialchars($data['nome']),
+                'email' => htmlspecialchars($data['email']),
+                'celular' => htmlspecialchars($data['celular']),
+                'assunto' => htmlspecialchars($data['assunto'] ?? 'Não informado'),
+                'mensagem' => nl2br(htmlspecialchars($data['mensagem']))
+            ])->render();
         }
 
-        // Template HTML padrão
+        // Template HTML padrão com dados sanitizados
+        $nome = htmlspecialchars($data['nome']);
+        $email = htmlspecialchars($data['email']);
+        $celular = htmlspecialchars($data['celular']);
+        $assunto = htmlspecialchars($data['assunto'] ?? 'Não informado');
+        $mensagem = nl2br(htmlspecialchars($data['mensagem']));
+
         return "
         <html>
         <head>
@@ -156,24 +251,20 @@ class ContactController extends Controller
                 </div>
                 <div class='content'>
                     <div class='field'>
-                        <span class='label'>Nome:</span>
-                        <span class='value'>{$data['nome']}</span>
+                        <span class='label'>Nome: {$nome}</span>
                     </div>
                     <div class='field'>
-                        <span class='label'>Email:</span>
-                        <span class='value'>{$data['email']}</span>
+                        <span class='label'>Email: {$email}</span>
                     </div>
                     <div class='field'>
-                        <span class='label'>Celular:</span>
-                        <span class='value'>{$data['celular']}</span>
+                        <span class='label'>Celular: {$celular}</span>
                     </div>
                     <div class='field'>
-                        <span class='label'>Assunto:</span>
-                        <span class='value'>" . ($data['assunto'] ?? 'Não informado') . "</span>
+                        <span class='label'>Assunto: {$assunto}</span>
                     </div>
                     <div class='field'>
                         <span class='label'>Mensagem:</span>
-                        <p class='value'>" . nl2br(htmlspecialchars($data['mensagem'])) . "</p>
+                        <p class='value'>{$mensagem}</p>
                     </div>
                 </div>
             </div>
@@ -182,25 +273,51 @@ class ContactController extends Controller
         ";
     }
 
-    /**
-     * Get plain text email content
-     *
-     * @param array $data
-     * @return string
-     */
     private function getPlainTextEmail($data)
     {
+        $nome = $data['nome'];
+        $email = $data['email'];
+        $celular = $data['celular'];
+        $assunto = $data['assunto'] ?? 'Não informado';
+        $mensagem = $data['mensagem'];
+
         return "
-    Novo Contato do Site
-    ====================
+            Novo Contato do Site
+            ====================
 
-    Nome: {$data['nome']}
-    Email: {$data['email']}
-    Celular: {$data['celular']}
-    Assunto: " . ($data['assunto'] ?? 'Não informado') . "
+            Nome: {$nome}
+            Email: {$email}
+            Celular: {$celular}
+            Assunto: {$assunto}
 
-    Mensagem:
-    {$data['mensagem']}
+            Mensagem:
+            {$mensagem}
         ";
+    }
+
+    public function validRecaptcha($request)
+    {
+        $recaptcha = $request->input('g-recaptcha-response');
+
+        if (is_null($recaptcha)) {
+            $request->session()->flash('message', "Por favor complete o captcha.");
+            return redirect()->back();
+        }
+
+        $url = "https://www.google.com/recaptcha/api/siteverify";
+
+        $params = [
+            'secret' => config('services.recaptcha.secret_key'),
+            'response' => $recaptcha,
+            'remoteip' => IpUtils::anonymize($request->ip())
+        ];
+        $response = Http::asForm()->post($url, $params);
+        $result = json_decode($response);
+
+        if ($response->successful() && $result->success == true) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

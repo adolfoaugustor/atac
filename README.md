@@ -28,3 +28,5 @@ Laravel has the most extensive and thorough [documentation](https://laravel.com/
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+php artisan vendor:publish --provider="Spatie\Honeypot\HoneypotServiceProvider" --tag="config"
