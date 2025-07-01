@@ -182,7 +182,7 @@ class ContactController extends Controller
 
             $mail->Timeout = 60;
             $mail->setFrom(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'));
-            $mail->addAddress(env('MAIL_ADMIN_ADDRESS', 'adolfoaugustor@gmail.com'), env('MAIL_ADMIN_NAME', 'Admin ATAC'));
+            $mail->addAddress(env('MAIL_ADMIN_ADDRESS'), env('MAIL_ADMIN_NAME'));
             $mail->addReplyTo($data['email'], $data['nome']);
 
             $mail->isHTML(true);
@@ -198,7 +198,7 @@ class ContactController extends Controller
             $mail->send();
 
             Log::info('Email enviado com sucesso', [
-                'to' => env('MAIL_ADMIN_ADDRESS', 'adolfoaugustor@gmail.com'),
+                'to' => env('MAIL_ADMIN_ADDRESS'),
                 'from' => $data['email']
             ]);
 
