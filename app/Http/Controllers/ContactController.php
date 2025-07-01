@@ -26,11 +26,7 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         if( env('APP_ENV') == 'production' ){
-            $captcha = $this->validRecaptcha($request);
-            if (!$captcha) {
-                return redirect()->back()
-                    ->with(['error' => 'Captcha não é válido!']);
-            }
+            $this->validRecaptcha($request);
         }
 
         // Verificar se o campo honeypot foi preenchido (indicando um bot)
@@ -311,13 +307,15 @@ class ContactController extends Controller
             'response' => $recaptcha,
             'remoteip' => IpUtils::anonymize($request->ip())
         ];
-        $response = Http::asForm()->post($url, $params);
-        $result = json_decode($response);
+        try {
 
-        if ($response->successful() && $result->success == true) {
-            return true;
-        } else {
-            return false;
+            $response = Http::asForm()->post($url, $params);
+            $result = json_decode($response);
+
+            return ($response->successful() && $result->success == true);
+
+        } catch (Exception $e) {
+            throw new Exception("Captcha inválido, preencha novamente o captcha!", 304);
         }
     }
 }
