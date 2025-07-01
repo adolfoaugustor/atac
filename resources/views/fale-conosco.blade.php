@@ -74,7 +74,6 @@
                         <h3>Preencha os campos:</h3><br>
                         <form class="contact-form" id="contact_form" method="POST" action="{{ route('contact.store') }}" data-grecaptcha-action="message">
                             @csrf
-                            @honeypot
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="nome">Nome Completo</label>
