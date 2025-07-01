@@ -130,7 +130,7 @@
             loading="lazy"
             allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJUaP0b5ZOxwcRY7gJfKarnkY&key={{ env('GOOGLE_MAPS_API_KEY') }}">
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJUaP0b5ZOxwcRY7gJfKarnkY&key=AIzaSyCA7XVaXUSfnFumdAnjgSu9TXRz1x5pQF0">
         </iframe>
     </div>
 
