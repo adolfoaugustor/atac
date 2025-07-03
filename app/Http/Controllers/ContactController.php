@@ -25,8 +25,9 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        if( env('APP_ENV') == 'production' ){
-            $this->validRecaptcha($request);
+        if(!$this->validRecaptcha($request)){
+            return redirect()->back()
+                ->with(['error' => 'Envio não permitido. Por favor, marque a caixa "Não sou um robô".']);
         }
 
         // Verificar se o campo honeypot foi preenchido (indicando um bot)
@@ -291,31 +292,78 @@ class ContactController extends Controller
         ";
     }
 
-    public function validRecaptcha($request)
+    /**
+     * Valida o token do reCAPTCHA
+     *
+     * @param Request $request
+     * @return bool
+     */
+    private function validRecaptcha(Request $request)
     {
-        $recaptcha = $request->input('g-recaptcha-response');
+        // Obter o token do reCAPTCHA
+        $recaptchaResponse = $request->input('g-recaptcha-response');
 
-        if (is_null($recaptcha)) {
-            $request->session()->flash('message', "Por favor complete o captcha.");
-            return redirect()->back();
+        // Se não houver token, a validação falha
+        if (empty($recaptchaResponse)) {
+            Log::warning('Tentativa de envio de formulário sem token reCAPTCHA', [
+                'ip' => $request->ip()
+            ]);
+            return false;
         }
 
+        // Preparar a requisição para a API do Google
         $url = "https://www.google.com/recaptcha/api/siteverify";
-
         $params = [
             'secret' => config('services.recaptcha.secret_key'),
-            'response' => $recaptcha,
-            'remoteip' => IpUtils::anonymize($request->ip())
+            'response' => $recaptchaResponse,
+            'remoteip' => $request->ip()
         ];
+
         try {
-
+            // Fazer a requisição para a API do Google
             $response = Http::asForm()->post($url, $params);
-            $result = json_decode($response);
 
-            return ($response->successful() && $result->success == true);
+            // Verificar se a requisição foi bem-sucedida
+            if (!$response->successful()) {
+                Log::error('Erro na comunicação com a API do reCAPTCHA', [
+                    'status' => $response->status(),
+                    'body' => $response->body()
+                ]);
+                return false;
+            }
 
-        } catch (Exception $e) {
-            throw new Exception("Captcha inválido, preencha novamente o captcha!", 304);
+            // Decodificar a resposta
+            $result = $response->json();
+
+            // Registrar o resultado para depuração
+            Log::info('Resposta do reCAPTCHA', [
+                'success' => $result['success'] ?? false,
+                'score' => $result['score'] ?? 'N/A',
+                'action' => $result['action'] ?? 'N/A',
+                'hostname' => $result['hostname'] ?? 'N/A',
+                'errors' => $result['error-codes'] ?? []
+            ]);
+
+            // Verificar se o token é válido e tem uma pontuação aceitável (para v3)
+            if (isset($result['success']) && $result['success'] === true) {
+                // Para reCAPTCHA v3, verificar a pontuação (0.0 a 1.0)
+                if (isset($result['score'])) {
+                    // Considerar válido se a pontuação for maior que 0.5 (ajuste conforme necessário)
+                    return $result['score'] >= 0.5;
+                }
+
+                // Para reCAPTCHA v2, apenas verificar o sucesso
+                return true;
+            }
+
+            return false;
+
+        } catch (\Exception $e) {
+            Log::error('Exceção ao validar reCAPTCHA', [
+                'message' => $e->getMessage(),
+                'trace' => $e->getTraceAsString()
+            ]);
+            return false;
         }
     }
 }

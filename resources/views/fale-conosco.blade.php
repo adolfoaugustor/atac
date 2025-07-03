@@ -114,7 +114,12 @@
                                 <label for="website">Website</label>
                                 <input type="text" name="website" id="website" value="">
                             </div>
-                            <div class="g-recaptcha mt-4" data-sitekey="{{config('services.recaptcha.site_key')}}"></div>
+                            <div class="form-group">
+                                <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
+                                @if(Session::has('error') && str_contains(Session::get('error'), 'verificação de segurança'))
+                                    <span class="text-danger">Por favor, marque a caixa "Não sou um robô".</span>
+                                @endif
+                            </div>
                            <button class="btn btn-primary" name="submit" type="submit" data-text="Enviar" id="submit_btn">Enviar</button>
                         </form>
                     </div>
