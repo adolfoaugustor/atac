@@ -10,17 +10,17 @@
 @endsection
 
 <section class="subpage-header">
-   <div class="container">
-      <div class="site-title clearfix">
-         <h2>{{ ucfirst($page->title) }}</h2>
-         <ul class="breadcrumbs">
-            <li><a href="{{ route('index.home') }}">Home</a></li>
-         </ul>
-      </div>
-      <a href="contact-us.html" class="btn btn-primary get-in-touch" data-text="Contate-nos">
-         <i class="icon-telephone114"></i>Contate-nos
-      </a>
-   </div>
+    <div class="container">
+        <div class="site-title clearfix">
+            <h2>{{ ucfirst($page->title) }}</h2>
+            <ul class="breadcrumbs">
+                <li><a href="{{ route('index.home') }}">Home</a></li>
+            </ul>
+        </div>
+        <a href="mailto:atac-assessoria@uol.com.br" class="btn btn-primary get-in-touch" data-text="Contate-nos">
+            <i class="icon-envelope"></i>Contate-nos
+        </a>
+    </div>
 </section>
 
 @section('conteudo')

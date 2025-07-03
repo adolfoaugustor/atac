@@ -15,8 +15,8 @@
                 <li><a href="{{ route('index.home') }}">Home</a></li>
             </ul>
         </div>
-        <a href="{{ route('contact.index') }}" class="btn btn-primary get-in-touch" data-text="Contate-nos">
-            <i class="icon-telephone114"></i>Contate-nos
+        <a href="mailto:atac-assessoria@uol.com.br" class="btn btn-primary get-in-touch" data-text="Contate-nos">
+            <i class="icon-envelope"></i>Contate-nos
         </a>
     </div>
 </section>
