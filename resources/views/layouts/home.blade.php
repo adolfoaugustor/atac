@@ -235,7 +235,7 @@
 
 	@section('conteudo')
 		@isset($servicos)
-			<!-- WELCOME -->
+			<!-- WELCOME serviços -->
 			<section class="servicos">
 				<div class="container">
 					<div class="heading text-center animate bounceIn">
@@ -269,7 +269,8 @@
 		@endisset
 
 		@isset($clients)
-			<section>
+            <section>
+			    <!-- Clients -->
 				<div class="container clients">
 					<div class="heading margin-bottom-50 animate-it bounceIn">
 						<h2>Nossos Clintes</h2>
@@ -279,7 +280,7 @@
 					<div class="two-items-carousel2 owl-carousel">
 						@foreach($clients as $client)
 							<div class="partner">
-								<img src="{{ asset('storage/' . $client->thumbnail('cropped', 'image_client')) }}" alt="">
+								<img src="{{ asset('storage/' . $client->image_client) }}" alt="">
 							</div>
 						@endforeach
 					</div>
