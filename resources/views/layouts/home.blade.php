@@ -296,9 +296,12 @@
 					</div>
 					<div class="col-md-3">
 						<div class="text-right">
-							<a href="tel:+853292-2586" class="btn btn-primary get-in-touch animate fadeInRight" data-text="Fale conosco">
+							<!-- <a href="tel:+853292-2586" class="btn btn-primary get-in-touch animate fadeInRight" data-text="Fale conosco">
 								<i class="fa fa-whatsapp"></i>Fale conosco
-							</a>
+							</a> -->
+                            <a href="mailto:atac-assessoria@uol.com.br" class="btn btn-primary get-in-touch" data-text="Contate-nos">
+                                <i class="icon-envelope"></i>Contate-nos
+                            </a>
 						</div>
 					</div>
 				</div>
