@@ -613,8 +613,8 @@ BLOG
 .cases-filter-nav li  {display:inline-block;list-style:none;margin:0 5px;}
 .cases-filter-nav li a{font-size:16px;line-height: 15px;font-family: "Open Sans",sans-serif;color:#000;outline: medium none;padding: 14px 25px 13px;border-radius:30px;text-decoration: none; display:block;}
 .cases-filter-nav li a:hover, .cases-filter-nav li a.selected{color:#fff;}
-.cases-container li{text-align:center;width:50%;list-style:none;}
-.cases-container li img{width:90%;}
+.cases-container li{text-align:center;width:100%;list-style:none;}
+.cases-container li img{width:100%;}
 .cases-item{ position:relative;}
 .cases-item img{ width:100%;}
 .cases-item figcaption{ position:absolute; left:5px; right:5px; top:5px; bottom:10px; color:#fff; font-size:15px;line-height: 15px;padding: 5px; text-align:center;transform: scale(0);-webkit-transition: all 0.4s ease 0s;-moz-transition: all 0.4s ease 0s;-ms-transition: all 0.4s ease 0s;-o-transition: all 0.4s ease 0s;transition: all 0.4s ease 0s;}
@@ -728,7 +728,7 @@ FOOTER
 #footer{ background: url(../images/colorfull-row3.jpg) no-repeat #f5f5f5; color:#ffffff;}
 #footer a{ color:#ffffff;}
 #footer a:hover{ color:#ffffff; text-shadow: 0px 0px black;}
-#footer .footer-top{ padding:70px 0;}
+#footer .footer-top{ padding:10px 0;}
 #footer .footer-top p{ margin:8px 0;}
 #footer .footer-logo{ position:relative;}
 #footer .footer-logo:after{ width:1px; content:""; height:69px; background:#ababab; position:absolute; right:0; top:21px;}
@@ -772,16 +772,7 @@ FOOTER
 #footer.dark .footer-bottom{ background:#2d3440;}
 
 
-
-
-
-
-
-
-
 /*color switcher*/
-
-
 .styled-selectt{ border:1px solid #c7c7c7; padding:5px 10px; position:relative; height:37px;}
 .styled-selectt:after{ content:""; position:absolute; right:0; top:0; z-index:-1; width:31px; height:37px; background:url("../images/styled-select-arrow.png") no-repeat center center; cursor:pointer;}
 .styled-selectt p{ font-size: 14px; line-height: 25px; margin-bottom: 0 !important; padding-bottom: 0; cursor:pointer;}
@@ -817,8 +808,6 @@ FOOTER
 	list-style:none;
 	padding:0;
 }
-
-
 
 
 .color-switcher ul li {
@@ -915,4 +904,4 @@ FOOTER
 .header-footer ul li{ float:none;}
 .line {display: flex;flex-direction: column;width: 100%;padding-bottom: 8px;border-bottom: 2px solid rgb(191, 134, 47);}
 a.page-links:hover{background-color: #bf862f; color:#bf862f;}
-a > figure > img {width: 420px !important; height: 420px;}
+a > figure > img {width: 320px !important; height: 320px;}

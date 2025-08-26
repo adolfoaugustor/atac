@@ -20,35 +20,41 @@
 </section>
 
 @section('conteudo')
-   <!-- CASES CONTENT -->
-   @isset($clients)
-   <section>
-      <div class="container">
-         <ul id="cases-container" class="cases-container">
+    <!-- CASES CONTENT -->
+    @isset($clients)
+    <section>
+        <div class="container">
+            <div class="row">
+                <ul id="cases-container" class="cases-container">
+                    @foreach($clients as $key => $client)
+                    <div class="col-md-4">
+                        <li class="entry business-services">
+                            <div class="cases-item animate fadeInUp"
+                                @if($key === 0) @else data-delay="{{ $key === 1 ? 100 : 200 }}" @endif>
 
-            @foreach($clients as $key => $client)
-               <li class="entry business-services">
-                  <div class="cases-item animate fadeInUp"
-                     @if($key === 0) @else data-delay="{{ $key === 1 ? 100 : 200 }}" @endif>
-                     <a href="#">
-                        <figure>
-                           <img src="{{ asset('storage/' . $client->image_client ) }}" alt="">
-                           <figcaption>
-                              <div>
-                                 <small>{{ $client->name }}</small>
-                                 {{ $client->description }}
-                              </div>
-                           </figcaption>
-                        </figure>
-                     </a>
-                  </div>
-               </li>
-            @endforeach
-         </ul>
-
-      </div>
-
-   </section>
+                                @if(isset($client->link_client))
+                                    <a href="{{ $client->link_client }}" target="_blank" rel="{{ $client->name }}" class="page-links">
+                                @else
+                                    <a href="#" class="page-links">
+                                @endif
+                                    <figure>
+                                        <img src="{{ asset('storage/' . $client->image_client ) }}" alt="">
+                                        <figcaption>
+                                            <div>
+                                                <small>{{ $client->name }}</small>
+                                                {{ $client->description }}
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                        </li>
+                    </div>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </section>
    <!-- / CASES CONTENT -->
    @endisset
 @endsection
