@@ -47,12 +47,12 @@
 
             <div class="row text-center">
                 @foreach ($links as $key => $links)
-                    <div class="col-md-6">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
                         <a href="{{ $links->url }}" target="_blank" rel="{{ $links->title }}" class="page-links">
                             <div class="text-box text-center">
                                 <div class="bordered-thumb">
                                     @if ($links->image_link)
-                                        <img src="{{ asset('storage/' . $links->image_link ) }}" alt="">
+                                        <img src="{{ asset('storage/' . $links->image_link ) }}" alt="" title="{{ $links->title }}">
                                     @endif
                                 </div>
                                 <p style="font-size: 16px;">{{ $links->title }}</p>
@@ -63,4 +63,29 @@
             </div>
         </div>
     </section><!-- / WELCOME -->
+@endsection
+
+@section('scripts-extras')
+<script>
+    function limitarPalavrasFrontend(texto, limite) {
+        texto = texto.trim();
+
+        let palavras = texto.split(/\s+/);
+
+        if (palavras.length > limite) {
+            let textoLimitado = palavras.slice(0, limite).join(' ');
+            return textoLimitado + '...';
+        }
+
+        return texto;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const titulosLinks = document.querySelectorAll('.page-links .text-box p');
+        const limiteDesejadoDePalavras = 4;
+        titulosLinks.forEach(function(paragrafo) {
+            paragrafo.textContent = limitarPalavrasFrontend(paragrafo.textContent, limiteDesejadoDePalavras);
+        });
+    });
+</script>
 @endsection
