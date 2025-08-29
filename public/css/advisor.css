@@ -252,7 +252,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{ color:#121212;}
 .social li a i				{ display:block; width:43px; height:43px; border:1px solid #848484; background:#fff; text-align:center; border-radius:100%; color:#535353;line-height: 42px;}
 .social li a:hover i		{ color:#fff;}
 .social li a.facebook:hover i{ background:#3C599B !important; border-color:#3C599B !important;}
-.social li a.twitter:hover i{ background:#29AAE3 !important; border-color:#29AAE3 !important;}
+.social li a.twitter:hover i{ background:#ff1c78 !important; border-color:#ff1c78 !important;}
 .social li a.google-plus:hover i{ background:#DB493A !important; border-color:#DB493A !important;}
 .social li a.linkedin:hover i{ background:#5694C7 !important; border-color:#5694C7 !important;}
 .social-text li			{ display:inline-block; position:relative;padding: 0 9px;}
@@ -617,7 +617,7 @@ BLOG
 .cases-container li img{width:100%;}
 .cases-item{ position:relative;}
 .cases-item img{ width:100%;}
-.cases-item figcaption{ position:absolute; left:10px; right:10px; top:10px; bottom:10px; color:#fff; font-size:24px;line-height: 25px;padding: 20px; text-align:center;transform: scale(0);-webkit-transition: all 0.4s ease 0s;-moz-transition: all 0.4s ease 0s;-ms-transition: all 0.4s ease 0s;-o-transition: all 0.4s ease 0s;transition: all 0.4s ease 0s;}
+.cases-item figcaption{ position:absolute; left:5px; right:5px; top:5px; bottom:10px; color:#fff; font-size:15px;line-height: 15px;padding: 5px; text-align:center;transform: scale(0);-webkit-transition: all 0.4s ease 0s;-moz-transition: all 0.4s ease 0s;-ms-transition: all 0.4s ease 0s;-o-transition: all 0.4s ease 0s;transition: all 0.4s ease 0s;}
 .cases-item figcaption small{ display:block; font-size:16px;font-family: "Open Sans",sans-serif;}
 .cases-item figcaption i {display:block;font-size: 30px;margin-bottom: 2px;}
 .cases-item div{left: 0;position: absolute;right: 0;text-align: center;top: 50%;transform: translateY(-50%);}
@@ -773,16 +773,7 @@ FOOTER
 #footer.dark .footer-bottom{ background:#2d3440;}
 
 
-
-
-
-
-
-
-
 /*color switcher*/
-
-
 .styled-selectt{ border:1px solid #c7c7c7; padding:5px 10px; position:relative; height:37px;}
 .styled-selectt:after{ content:""; position:absolute; right:0; top:0; z-index:-1; width:31px; height:37px; background:url("../images/styled-select-arrow.png") no-repeat center center; cursor:pointer;}
 .styled-selectt p{ font-size: 14px; line-height: 25px; margin-bottom: 0 !important; padding-bottom: 0; cursor:pointer;}
@@ -818,8 +809,6 @@ FOOTER
 	list-style:none;
 	padding:0;
 }
-
-
 
 
 .color-switcher ul li {
