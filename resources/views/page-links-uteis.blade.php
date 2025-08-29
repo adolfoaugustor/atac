@@ -63,42 +63,31 @@
 
             <div class="height-50"></div>
 
-            {{-- Loop através de cada categoria já ordenada pelo controller --}}
             @foreach ($categorias as $category)
-                <div class="category-section">
-                    {{-- Título da Categoria --}}
-                    <h3 class="category-title text-center">{{ $category->name }}</h3>
-                    <div class="height-30"></div> {{-- Espaçamento após o título da categoria --}}
+                <div class="col-md-12">
+                    <h2 class="text-body-emphasis">{{ $category->name }}</h2>
+                        <ul class="list-unstyled ps-0">
+                            <div class="height-30"></div>
+                            @php
+                                $filteredLinks = $links->where('category', $category->slug);
+                            @endphp
 
-                    {{-- Filtra os links para a categoria atual --}}
-                    @php
-                        // Filtra a coleção de links para pegar apenas os que têm o slug da categoria atual
-                        $filteredLinks = $links->where('category', $category->slug);
-                    @endphp
+                            @if ($filteredLinks->isNotEmpty())
+                                @foreach ($filteredLinks as $link_item)
+                                    <li>
+                                        <a class="icon-link mb-1" href="{{ $link_item->url }}" rel="{{ $link_item->title }}" target="_blank">
+                                            <svg class="bi" width="16" height="16" aria-hidden="true">
+                                                <use xlink:href="#arrow-right-circle"></use>
+                                            </svg>
+                                            {{ $link_item->title }}
+                                        </a>
+                                    </li>
+                                @endforeach
 
-                    @if ($filteredLinks->isNotEmpty())
-                        {{-- Se houver links para esta categoria, exibe-os --}}
-                        <div class="row text-center">
-                            @foreach ($filteredLinks as $link_item) {{-- Renomeado $links para $link_item para evitar conflito com a variável $links da coleção --}}
-                                <div class="col-xs-12 col-sm-6 col-md-4">
-                                    <a href="{{ $link_item->url }}"  rel="{{ $link_item->title }}" class="page-links">
-                                        <div class="text-box text-center">
-                                            <div class="bordered-thumb">
-                                                @if ($link_item->image_link)
-                                                    <img src="{{ asset('storage/' . $link_item->image_link ) }}" alt="{{ $link_item->title }}" title="{{ $link_item->title }}">
-                                                @endif
-                                            </div>
-                                            <p style="font-size: 16px;">{{ $link_item->title }}</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            @endforeach
-                        </div>
-                    @else
-                        {{-- Mensagem se não houver links para a categoria --}}
-                        <p class="text-center text-muted">Nenhum link disponível para esta categoria no momento.</p>
-                    @endif
-
+                            @else
+                                <p class="text-center text-muted">Nenhum link disponível para esta categoria no momento.</p>
+                            @endif
+                        </ul>
                     <div class="height-50"></div> {{-- Espaçamento entre as seções de categorias --}}
                 </div>
             @endforeach
