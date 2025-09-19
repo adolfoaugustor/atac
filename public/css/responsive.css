@@ -103,6 +103,7 @@ h2.resp-accordion{ display:block;}
 .cart-product .pull-left{ float:none !important;}
 .cart-product img{ margin:0 auto 10px;}
 .quries-img{ width:150px; float:left; margin:29px 20px 0 0;}
+#footer p.text-center.contact-footer {padding: 15px 0px;}
 }
 
 @media (max-width: 590px) {
@@ -168,6 +169,7 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
 .comment-content-wrapper {padding-left: 54px;}
 .comment-respond h3 { margin-bottom: 20px;}
 .item-counter{ margin-bottom:20px;}
+#footer p.text-center.contact-footer {padding: 15px 0px;}
 
 }
 @media (max-width: 450px) {.quries-img{ width:100%; margin:0 0 15px 0;}}
@@ -198,6 +200,7 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
 #footer .usefull-links-widget h4, #footer .twitter-widget h4 { margin-bottom: 6px;padding-bottom: 0;}
 #footer .twitter-widget { padding-right: 0;}
 #footer .newsletter-widget { margin-top: 40px; padding: 30px 29px 20px;}
+#footer p.text-center.contact-footer {padding: 15px 0px;}
 .cd-slider-nav { height: 114px;}
 .cd-slider-nav a:before{ height:114px;}
 .meet-our-advisors .classic-arrows .owl-nav{ margin:20px 0 0;}

@@ -1,7 +1,7 @@
 @foreach($items as $item)
     @if ($item->title =='facebook')
         <li class="animate bounceIn" data-delay="100">
-            <a href="{{ $item->link() }}" target="{{ $item->target }}" class="twitter"><i class="fa fa-instagram"></i></a>
+            <a href="{{ $item->link() }}" target="{{ $item->target }}" class="twitter"><i class="icon-instagram"></i></a>
         </li>
     @elseif ($item->title =='twitter')
         <li class="animate bounceIn">

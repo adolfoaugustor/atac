@@ -106,7 +106,6 @@ section.bg-blue{padding: 50px 0;}
 .advisor-overlay{ position:absolute; left:0; right:0; top:0; bottom:0;}
 .heading h1,
 .heading h2		{ margin-bottom:10px}
-.img-shadow{-webkit-box-shadow: -10px 10px 0px 0px rgba(226,228,233,1);-moz-box-shadow: -10px 10px 0px 0px rgba(226,228,233,1);box-shadow: -10px 10px 0px 0px rgba(226,228,233,1);}
 img{ max-width:80%;}
 .list-bullets li	{ list-style:none; position:relative; padding:5px 0 5px 17px;font-family: "Open Sans",sans-serif;}
 .list-bullets li:before{ position:absolute; left:0; top:15px; width:6px; height:6px; border-radius:100%; content:"";}
@@ -252,7 +251,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{ color:#121212;}
 .social li a i				{ display:block; width:43px; height:43px; border:1px solid #848484; background:#fff; text-align:center; border-radius:100%; color:#535353;line-height: 42px;}
 .social li a:hover i		{ color:#fff;}
 .social li a.facebook:hover i{ background:#3C599B !important; border-color:#3C599B !important;}
-.social li a.twitter:hover i{ background:#ff1c78 !important; border-color:#ff1c78 !important;}
+.social li a.twitter:hover i {background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;border-color: #e6683c !important;}
 .social li a.google-plus:hover i{ background:#DB493A !important; border-color:#DB493A !important;}
 .social li a.linkedin:hover i{ background:#5694C7 !important; border-color:#5694C7 !important;}
 .social-text li			{ display:inline-block; position:relative;padding: 0 9px;}
@@ -729,8 +728,8 @@ FOOTER
 #footer{ background: url(../images/colorfull-row3.jpg) no-repeat #f5f5f5; color:#ffffff;}
 #footer a{ color:#ffffff;}
 #footer a:hover{ color:#ffffff; text-shadow: 0px 0px black;}
-#footer .footer-top{ padding:10px 0;}
-#footer .footer-top p{ margin:8px 0;}
+#footer .footer-top{ padding:5px 0;}
+/* #footer .footer-top p{ margin:8px 0;} */
 #footer .footer-logo{ position:relative;}
 #footer .footer-logo:after{ width:1px; content:""; height:69px; background:#ababab; position:absolute; right:0; top:21px;}
 #footer .footer-address-widget{ padding:18px 32px; background:#fff;}
@@ -739,13 +738,15 @@ FOOTER
 #footer .footer-address-widget ul li span, #footer .footer-address-widget ul li a{ display:block; font-size:16px;}
 #footer .footer-address-widget ul li i{ font-size: 40px;left: 0; position: absolute;top: 8px;}
 #footer .footer-address-widget ul li i.icon-icons74{ font-size:44px;top: 4px;}
-#footer .usefull-links-widget{ font-weight: normal; text-shadow: 2px 1px black; font-weight: 600;}
+#footer .usefull-links-widget{ font-weight: normal; text-shadow: 1px 1px black; font-weight: 600;}
 #footer .usefull-links-widget h2{ padding-bottom:15px; color:#ffffff; font-weight:600;}
+#footer .usefull-links-widget h3{ padding-bottom:15px; color:#ffffff; font-weight:600;}
 #footer .usefull-links-widget ul{ width:50%; float:left;}
 #footer .usefull-links-widget li{ list-style:none; padding: 6px 0;}
 #footer .usefull-links-widget li a{ font-size:16px; background:url(../images/dot.png) no-repeat 0 10px; font-weight: bold;font-family: "Open Sans",sans-serif;padding-left: 20px;}
-#footer .twitter-widget{ padding-right: 40px; text-shadow: 2px 1px black; font-weight: bold;}
+#footer .twitter-widget{ padding-right: 40px; text-shadow: 1px 1px black; font-weight: bold;}
 #footer .twitter-widget h2{ padding-bottom:15px; color:#ffffff; font-weight:600;}
+#footer .twitter-widget h3{ padding-bottom:15px; color:#ffffff; font-weight:600;}
 #footer .twitter-widget .tweet i {float:left;font-size:24px;margin-top:15px; color:#818181;}
 #footer .twitter-widget .tweet p {padding:10px 0 0 30px;margin:0 0 10px; font-size:16px; line-height:24px;}
 #footer .twitter-widget .tweet p a{ font-weight:600;}
@@ -753,7 +754,6 @@ FOOTER
 #footer .newsletter-widget{ padding:20px 29px; background:#e9e9e9;}
 #footer .newsletter-widget p{ font-size:16px; line-height:21px;margin: 0 0 20px;}
 #footer .newsletter-widget .social{ background:#e3e3e3; text-align:center; padding:17px; margin:50px -29px -20px;}
-#footer ul.social { margin-top: 15px; }
 #footer .footer-left {float: left;width: 65%;}
 #footer .footer-right {float: left;width: 35%;}
 #footer .footer-bottom{ padding:30px 0; background:#0d1d49; color: #fff;}
@@ -771,7 +771,9 @@ FOOTER
 #footer.dark .newsletter-widget .social{ background-color:#222732}
 #footer.dark .social li a i{ background:none; border-color:#525863; color:#fff;}
 #footer.dark .footer-bottom{ background:#2d3440;}
-
+#footer.twitter-widget p, .contact-info-widget p {
+    font-size: 15px;
+}
 
 /*color switcher*/
 .styled-selectt{ border:1px solid #c7c7c7; padding:5px 10px; position:relative; height:37px;}

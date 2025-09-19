@@ -1,33 +1,21 @@
 		<footer id="footer">
-			<div class="container">
-				<div class="row">
-					<div class="footer-top clearfix">
-						<div class="col-md-4">
-							<div class="usefull-links-widget clearfix">
-								<h2>Páginas</h2>
-								{{ menu('links-uteis') }}
-							</div>
-						</div>
-						<div class="col-md-4 col-md-offset-4">
-							<div class="twitter-widget clearfix">
-								<h2>Contatos</h2>
-								{{ menu('contatos', 'menu-contato-footer')}}
-							</div>
-
-							<ul class="social">
-								{{ menu('social-footer', 'menu-footer-social')}}
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div class="footer-bottom">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-6 col-sm-6"><p>Coyright © 2023 ATAC. Todos os direitos reservados.</p></div>
-						<div class="col-md-6 col-sm-6">
-							<p class="text-right">Desenvolvido por <a href="https://aerowebsites.com.br" target="_blank">AeroWebSites</a></p>
+						<div class="col-md-3 col-sm-12"><p class="text-center">Coyright © 2023 ATAC.</p></div>
+
+						<div class="col-md-6 col-sm-12">
+							<p class="text-center contact-footer">
+                                Telefone: <a href="tel:+5585991696754">(85) 9 9169-6754</a> | E-mail: <a href="mailto:atac-assessoria@uol.com.br">atac-assessoria@uol.com.br</a>
+                                <br>Endereço: <a href="https://maps.app.goo.gl/zNYC7Y1wJoD2YWnK8" target="_blank">R. Magnólia, 43, Serrinha, Fortaleza - CE, 60741-010 </a>
+                            </p>
 						</div>
+
+                        <div class="col-md-3 col-sm-12">
+                            <ul class="social text-center">
+								{{ menu('social-footer', 'menu-footer-social')}}
+							</ul>
+                        </div>
 					</div>
 				</div>
 			</div>
