@@ -567,7 +567,7 @@ section.servicos{background: #e9ebf1;padding-top: 60;padding-bottom: 30px;}
 .partner img{ float:left;}
 .partner .partner-content{ padding:0 0 0 255px;}
 .partner h4 span{ display:block; font-size:18px; color:#000;font-family: "Open Sans",sans-serif; padding-top: 8px;}
-
+.justified-content p {text-align: justify !important; hyphens: auto; word-spacing: 0.1em;}
 
 
 /*------------------------------------------------------------------
@@ -911,3 +911,5 @@ a > figure > img {width: 320px !important; height: 320px;}
 a.icon-link.mb-1:hover{
     text-decoration: underline;
 }
+a:hover, a:focus, .btn-link:hover, .btn-link:focus {color: #bf862f !important;}
+section.links h2.text-body-emphasis {font-weight: 600;}

@@ -34,7 +34,7 @@
 
          @if ($page->body != null)
             <div class="height-50"></div>
-            <div class="row text-center">
+            <div class="row justified-content">
                {!! $page->body !!}
             </div>
          @endif
