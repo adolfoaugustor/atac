@@ -243,7 +243,7 @@
 					</div>
 					<div class="height-50"></div>
 
-					<div class="row text-center">
+					<div class="row centered-cols">
 						@if($servicos)
 							@foreach ($servicos as $key => $servico)
 							<div class="col-md-3">
@@ -280,7 +280,13 @@
 					<div class="two-items-carousel2 owl-carousel">
 						@foreach($clients as $client)
 							<div class="partner">
-								<img src="{{ asset('storage/' . $client->image_client) }}" alt="">
+                                @if(isset($client->link_client))
+                                    <a href="{{ $client->link_client }}" target="_blank" rel="{{ $client->name }}" class="page-links">
+                                @else
+                                    <a href="#" class="page-links">
+                                @endif
+								        <img src="{{ asset('storage/' . $client->image_client) }}" alt="">
+                                    </a>
 							</div>
 						@endforeach
 					</div>

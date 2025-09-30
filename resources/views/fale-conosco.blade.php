@@ -25,7 +25,7 @@
     <!-- CONTACT US -->
     <section>
         <div class="container">
-            <div class="row">
+            <div class="row justified-content">
                 <div class="col-md-6 col-sm-6 animate fadeInLeft">
                     <h3>{{ $page->title }}</h3>
                     <div class="row">

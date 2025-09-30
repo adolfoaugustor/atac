@@ -25,9 +25,9 @@
    <!-- COMPANY OVERVIEW -->
    <section>
       <div class="container">
-         <div class="row">
+         <div class="row justified-content">
             <div class="col-md-6 animate fadeInLeft">
-               <h2>{{ $page->title }}</h2>
+               <h2><b>{{ $page->title }}</b></h2>
                <div class="height-10"></div>
                <p>{!! $page->body !!}</p>
             </div>
@@ -39,30 +39,35 @@
                 </div>
             </div>
          </div>
-         {{-- <div class="row">
+         <div class="row justified-content">
             <div class="col-md-12" style="margin-top: 3%">
                 <ul class="company-history">
                     <li class="clearfix animate fadeInLeft">
                         <div class="history-content">
-                            <h4>VISÃO</h4>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout The point of using Lorem Ipsum.</p>
+                            <h4><b>VISÃO</b></h4>
+                            <p>Ser reconhecido pela experiência dos serviços prestados, sempre utilizando ferramentas de alta performace, agregando valor aos nossos clientes e aos nossos profissionais, criando assim relacionamentos produtivos e duradouros.</p>
                         </div>
                     </li>
                     <li class="clearfix animate fadeInLeft" data-delay="100">
                         <div class="history-content">
-                            <h4>MISSÃO</h4>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout The point of using Lorem Ipsum.</p>
+                            <h4><b>MISSÃO</b></h4>
+                            <p>Oferece as instituições públicas ou privadas, serviços em contabilidade e apoio administrativo de forma personalizada que superem as expectativas e contribuam para a otimização da gestão dos clientes, gerando resultados extraordinários.</p>
                         </div>
                     </li>
                     <li class="clearfix animate fadeInLeft" data-delay="200">
                         <div class="history-content">
-                            <h4>VALORES</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adi pisi cing elit, sed do eiusmod tempor exercitationemut labore. Curabitur metus ipsum. But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.</p>
+                            <h4><b>VALORES</b></h4>
+                            <p>
+                                <br>- Ética
+                                <br>- Transparência
+                                <br>- Compromentimento
+                                <br>- Profissionalismo
+                            </p>
                         </div>
                     </li>
                 </ul>
             </div>
-         </div> --}}
+         </div>
       </div>
    </section><!-- / COMPANY OVERVIEW -->
 @endsection

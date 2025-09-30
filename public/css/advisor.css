@@ -382,6 +382,9 @@ ALL SECTIONS
 -------------------------------------------------------------------*/
 
 .main-banner { padding:0;}
+section.main-banner div li{ height:70% !important;}
+.tp-rightarrow.tparrows{ top:260px !important;}
+.tp-leftarrow.tparrows{ top:260px !important;}
 .video-widget{ position:relative;}
 .video-widget img{ width:100%;}
 .video-widget a{ position: absolute; left:50%; top:50%; margin:-36px 0 0 -36px; background:#404856; width:72px; height:72px; border:3px solid #fff; color:#fff; border-radius:100%; text-align:center;font-size: 23px;line-height: 65px;}
@@ -568,7 +571,12 @@ section.servicos{background: #e9ebf1;padding-top: 60;padding-bottom: 30px;}
 .partner .partner-content{ padding:0 0 0 255px;}
 .partner h4 span{ display:block; font-size:18px; color:#000;font-family: "Open Sans",sans-serif; padding-top: 8px;}
 .justified-content p {text-align: justify !important; hyphens: auto; word-spacing: 0.1em;}
-
+/* .... nossos serviços - home .... */
+.centered-cols { display: flex; justify-content: center; flex-wrap: wrap;}
+.centered-cols .col-md-3 { flex: 0 0 auto; max-width: 25%;}
+@media (max-width: 767.98px) {
+    .centered-cols .col-md-3 {max-width: 100%; margin-bottom: 20px;}
+}
 
 /*------------------------------------------------------------------
 

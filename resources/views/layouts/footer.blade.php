@@ -41,7 +41,7 @@
 				{
 					delay:9000,
 					startwidth:1140,
-					startheight:650,
+					startheight:510,
 					hideThumbs:200,
 					fullWidth:"on",
 					forceFullWidth:"on"
