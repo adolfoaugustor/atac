@@ -41,7 +41,7 @@
 
          <div class="height-50"></div>
 
-         <div class="row text-center">
+         <div class="row centered-cols">
             @foreach ($servicos as $key => $servico)
                 <div class="col-md-3">
                     <div class="text-box text-center fadeInUp @if ($key === 0)
